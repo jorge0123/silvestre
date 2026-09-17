@@ -9,6 +9,7 @@ use App\Models\StoryHighlight;
 use App\Services\ContentScanner;
 use App\Services\MediaUploader;
 use App\Support\Media;
+use App\Support\Platform;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -60,7 +61,7 @@ class BusinessContentController extends Controller
                 'storiesLeftToday' => $business->remainingStoriesToday(),
                 'mediaPerPost' => $business->mediaPerPostLimit(),
                 // Por qué no tiene topes: fundador (para siempre) o "Todo libre" (por ahora).
-                'unlimited' => $business->isFounder() ? 'founder' : (\App\Support\Platform::freeMode() ? 'free' : null),
+                'unlimited' => $business->isFounder() ? 'founder' : (Platform::freeMode() ? 'free' : null),
                 'storySeconds' => self::STORY_MAX_SECONDS,
                 'postVideoSeconds' => self::POST_VIDEO_MAX_SECONDS,
                 'maxImageMb' => 10,

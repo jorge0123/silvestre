@@ -6,6 +6,7 @@ use App\Enums\BookingState;
 use App\Enums\ServiceMode;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * Fila complementaria 1:1 con una orden de tipo servicio.
@@ -36,7 +37,7 @@ class Booking extends Model
         return $this->belongsTo(Service::class);
     }
 
-    public function endsAt(): ?\Illuminate\Support\Carbon
+    public function endsAt(): ?Carbon
     {
         return $this->scheduled_at?->copy()->addMinutes($this->duration_min);
     }

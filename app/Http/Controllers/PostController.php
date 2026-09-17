@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Business;
 use App\Models\Post;
+use App\Models\PostReaction;
 use App\Support\Present;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -19,7 +20,7 @@ class PostController extends Controller
         $post->load(['media', 'business.category', 'business.zone', 'linkable']);
 
         $reacted = $request->user()
-            && \App\Models\PostReaction::where('user_id', $request->user()->id)->where('post_id', $post->id)->exists();
+            && PostReaction::where('user_id', $request->user()->id)->where('post_id', $post->id)->exists();
 
         return Inertia::render('public/PostShow', [
             'post' => Present::post($post, full: true, reacted: $reacted),

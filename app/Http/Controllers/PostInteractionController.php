@@ -9,6 +9,7 @@ use App\Models\PostComment;
 use App\Models\PostReaction;
 use App\Models\Report;
 use App\Services\ContentScanner;
+use App\Services\ScanResult;
 use App\Support\Present;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -168,7 +169,7 @@ class PostInteractionController extends Controller
     }
 
     /** Lo prohibido no se publica; el resto pasa y, si es dudoso, se revisa. */
-    private function guard(string $body): \App\Services\ScanResult
+    private function guard(string $body): ScanResult
     {
         $result = $this->scanner->scan($body);
 

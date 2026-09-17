@@ -18,12 +18,16 @@ use App\Enums\SubscriptionState;
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\Plan;
+use App\Models\Post;
+use App\Models\PostReaction;
 use App\Models\Review;
 use App\Models\User;
 use App\Models\Zone;
 use App\Support\ProhibitedItems;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\Client\Pool;
+use Illuminate\Http\Client\Response;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Facades\Storage;
@@ -279,9 +283,9 @@ class ShowcaseSeeder extends Seeder
                 foreach ($chunk->keys() as $path) {
                     $response = $responses[$path] ?? null;
 
-                    if ($response instanceof \Illuminate\Http\Client\Response && $response->successful()) {
+                    if ($response instanceof Response && $response->successful()) {
                         $disk->put($path, $response->body());
-                    } elseif ($response instanceof \Illuminate\Http\Client\Response && $response->status() === 429) {
+                    } elseif ($response instanceof Response && $response->status() === 429) {
                         $throttled = true;
                     }
                 }
@@ -570,7 +574,7 @@ class ShowcaseSeeder extends Seeder
      * Reacciones y comentarios REALES (filas de verdad), para que los conteos
      * cuadren con lo que se ve al abrir la publicación.
      */
-    private function engagement(Business $business, \App\Models\Post $post, array $customers, \DateTimeInterface $at): void
+    private function engagement(Business $business, Post $post, array $customers, \DateTimeInterface $at): void
     {
         $questions = [
             '¡Se ven riquísimas! ¿Todavía tienen disponible?',
@@ -591,12 +595,12 @@ class ShowcaseSeeder extends Seeder
         $people = collect($customers)->shuffle();
 
         foreach ($people->take(random_int(2, count($customers))) as $person) {
-            \App\Models\PostReaction::create(['post_id' => $post->id, 'user_id' => $person->id, 'created_at' => $at]);
+            PostReaction::create(['post_id' => $post->id, 'user_id' => $person->id, 'created_at' => $at]);
         }
 
         $total = 0;
         foreach ($people->take(random_int(0, 3)) as $i => $person) {
-            $when = \Illuminate\Support\Carbon::instance($at)->addMinutes(20 + $i * 35);
+            $when = Carbon::instance($at)->addMinutes(20 + $i * 35);
             $comment = $post->comments()->create([
                 'user_id' => $person->id,
                 'body' => $questions[array_rand($questions)],

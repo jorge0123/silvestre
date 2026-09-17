@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Business;
 use App\Models\Plan;
+use App\Support\Platform;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -50,7 +51,7 @@ class DashboardController extends Controller
                 'trialDaysLeft' => $subscription?->trialDaysLeft() ?? 0,
                 'pricing' => Plan::proPricingLabel(),
                 'founder' => $business->isFounder(),
-                'freeMode' => \App\Support\Platform::freeMode(),
+                'freeMode' => Platform::freeMode(),
             ],
             'needsDocument' => $business->category?->requires_verification
                 ? $business->category->required_document

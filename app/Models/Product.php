@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 #[Fillable([
     'name', 'slug', 'description', 'stock_mode', 'price_mode',
@@ -94,7 +95,7 @@ class Product extends Model
     }
 
     /** La fecha más temprana en que este producto puede entregarse. */
-    public function earliestFulfillmentDate(): \Illuminate\Support\Carbon
+    public function earliestFulfillmentDate(): Carbon
     {
         return now()->addDays($this->lead_time_days ?? 0);
     }

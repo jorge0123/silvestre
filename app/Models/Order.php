@@ -6,6 +6,7 @@ use App\Enums\BookingState;
 use App\Enums\FulfillmentMethod;
 use App\Enums\OrderState;
 use App\Enums\OrderType;
+use App\Enums\PaymentMethod;
 use App\Enums\ServiceMode;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -33,7 +34,7 @@ class Order extends Model
             'payment_expires_at' => 'datetime',
             'payment_submitted_at' => 'datetime',
             'payment_confirmed_at' => 'datetime',
-            'payment_method' => \App\Enums\PaymentMethod::class,
+            'payment_method' => PaymentMethod::class,
         ];
     }
 

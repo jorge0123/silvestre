@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
 
         // "hace 2 horas" en lugar de "2 hours ago".
         CarbonImmutable::setLocale(config('app.locale'));
-        \Carbon\Carbon::setLocale(config('app.locale'));
+        Carbon::setLocale(config('app.locale'));
 
         DB::prohibitDestructiveCommands(
             app()->isProduction(),

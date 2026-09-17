@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 class Post extends Model
 {
@@ -66,6 +67,6 @@ class Post extends Model
     /** Año-semana ISO; hace trivial contar el cupo semanal. */
     public static function weekKeyFor(?\DateTimeInterface $at = null): string
     {
-        return \Illuminate\Support\Carbon::instance($at ?? now())->format('o-\WW');
+        return Carbon::instance($at ?? now())->format('o-\WW');
     }
 }

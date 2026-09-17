@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
 /**
  * UN CARRITO POR NEGOCIO.
@@ -46,7 +47,7 @@ class Cart extends Model
      * Líneas cuyo precio cambió desde que se agregaron. Se le avisa al cliente
      * antes de cobrar, en lugar de cobrarle de más en silencio.
      *
-     * @return \Illuminate\Support\Collection<int, CartItem>
+     * @return Collection<int, CartItem>
      */
     public function stalePriceItems()
     {

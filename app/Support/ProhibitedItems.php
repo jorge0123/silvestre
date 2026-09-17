@@ -2,8 +2,6 @@
 
 namespace App\Support;
 
-use App\Enums\RiskLevel;
-
 /**
  * La política de artículos prohibidos, como datos.
  *

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\AccountType;
 use App\Models\Business;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class ModeController extends Controller
         // aún no terminó ningún negocio, deja de insistirle con el onboarding.
         // Puede abrir su negocio cuando quiera desde el selector de modo.
         if (! $user->ownedBusinesses()->whereNotNull('onboarding_completed_at')->exists()) {
-            $user->forceFill(['account_type' => \App\Enums\AccountType::Personal])->save();
+            $user->forceFill(['account_type' => AccountType::Personal])->save();
         }
 
         Inertia::flash('toast', [

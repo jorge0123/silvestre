@@ -6,10 +6,12 @@ use App\Enums\ModerationState;
 use App\Models\Business;
 use App\Models\BusinessHour;
 use App\Models\Post;
+use App\Models\PostReaction;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Service;
 use App\Models\StoryHighlight;
+use App\Models\User;
 use App\Support\Media;
 use App\Support\Present;
 use Illuminate\Http\Request;
@@ -88,13 +90,13 @@ class BusinessProfileController extends Controller
         ]);
     }
 
-    private function posts(Business $business, ?\App\Models\User $viewer)
+    private function posts(Business $business, ?User $viewer)
     {
         $posts = $business->posts()->published()->with(['media', 'business.category', 'business.zone'])
             ->latest('published_at')->limit(30)->get();
 
         $reacted = $viewer
-            ? \App\Models\PostReaction::where('user_id', $viewer->id)->whereIn('post_id', $posts->pluck('id'))->pluck('post_id')
+            ? PostReaction::where('user_id', $viewer->id)->whereIn('post_id', $posts->pluck('id'))->pluck('post_id')
             : collect();
 
         return $posts->map(fn (Post $p) => Present::post($p, reacted: $reacted->contains($p->id)));

@@ -6,11 +6,11 @@ use App\Models\Business;
 use App\Models\Post;
 use App\Models\PostComment;
 use App\Models\PostMedia;
-use App\Models\User;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Service;
 use App\Models\Story;
+use App\Models\User;
 
 /**
  * Convierte modelos en lo que ve la interfaz. Un solo lugar para decidir qué

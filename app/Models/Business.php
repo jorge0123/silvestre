@@ -5,7 +5,9 @@ namespace App\Models;
 use App\Enums\BusinessKind;
 use App\Enums\FulfillmentMethod;
 use App\Enums\Offering;
+use App\Enums\PlanCode;
 use App\Enums\ServiceMode;
+use App\Enums\SubscriptionState;
 use App\Support\Platform;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
@@ -231,7 +233,7 @@ class Business extends Model
         }
 
         $prefix = ltrim((string) config('silvestre.phone.prefix'), '+');
-        $text = $message ?? "Hola, te encontré en Silvestre y quiero hacer un pedido.";
+        $text = $message ?? 'Hola, te encontré en Silvestre y quiero hacer un pedido.';
 
         return "https://wa.me/{$prefix}{$this->whatsapp}?text=".rawurlencode($text);
     }
@@ -344,7 +346,7 @@ class Business extends Model
             }
 
             $firstFree = $this->subscriptions()
-                ->whereHas('plan', fn ($p) => $p->where('code', \App\Enums\PlanCode::Free->value))
+                ->whereHas('plan', fn ($p) => $p->where('code', PlanCode::Free->value))
                 ->oldest('id')
                 ->first();
 
@@ -487,7 +489,7 @@ class Business extends Model
     {
         $alreadyHadTrial = Subscription::where('business_id', $this->id)
             ->where(fn ($q) => $q->whereNotNull('trial_ends_at')
-                ->orWhereHas('plan', fn ($p) => $p->where('code', '!=', \App\Enums\PlanCode::Free->value)))
+                ->orWhereHas('plan', fn ($p) => $p->where('code', '!=', PlanCode::Free->value)))
             ->exists();
 
         if ($alreadyHadTrial) {
@@ -495,8 +497,8 @@ class Business extends Model
         }
 
         $this->subscription()->create([
-            'plan_id' => Plan::byCode(\App\Enums\PlanCode::Pro)->id,
-            'state' => \App\Enums\SubscriptionState::Trial,
+            'plan_id' => Plan::byCode(PlanCode::Pro)->id,
+            'state' => SubscriptionState::Trial,
             'trial_ends_at' => now()->addDays(Subscription::trialDays()),
         ]);
     }

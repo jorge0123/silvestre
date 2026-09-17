@@ -66,7 +66,7 @@ class MediaUploader
 
         if ($seconds !== null && $seconds > $maxSeconds + 0.5) {
             throw ValidationException::withMessages([
-                'media' => "El video dura ".round($seconds)." segundos. El máximo es {$maxSeconds}.",
+                'media' => 'El video dura '.round($seconds)." segundos. El máximo es {$maxSeconds}.",
             ]);
         }
 

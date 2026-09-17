@@ -8,6 +8,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -89,7 +90,7 @@ class User extends Authenticatable implements PasskeyUser
     }
 
     /** El negocio que está administrando ahora. null = modo personal. */
-    public function activeBusiness(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function activeBusiness(): BelongsTo
     {
         return $this->belongsTo(Business::class, 'active_business_id');
     }

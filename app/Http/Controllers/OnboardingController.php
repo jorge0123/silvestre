@@ -18,6 +18,7 @@ use App\Models\Plan;
 use App\Models\User;
 use App\Models\Zone;
 use App\Services\ContentScanner;
+use App\Services\ScanResult;
 use App\Support\ProhibitedItems;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -438,7 +439,7 @@ class OnboardingController extends Controller
     // -------------------------------------------------------------- utilidades
 
     /** Bloquea lo prohibido en el acto; devuelve el veredicto para lo demás. */
-    private function guardProhibited(string $field, string ...$texts): \App\Services\ScanResult
+    private function guardProhibited(string $field, string ...$texts): ScanResult
     {
         $result = $this->scanner->scan(...$texts);
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Plan;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -65,7 +66,7 @@ class HandleInertiaRequests extends Middleware
                 'dismissed' => $user?->dismissed_guides ?? [],
             ],
             'pricing' => fn () => [
-                'pro' => \App\Models\Plan::proPricingLabel(),
+                'pro' => Plan::proPricingLabel(),
             ],
             'region' => [
                 'currency' => config('silvestre.currency.symbol'),
