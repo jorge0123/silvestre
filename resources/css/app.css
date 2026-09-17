@@ -1,0 +1,248 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Identidad de Silvestre.
+ *
+ * Verde tinta sostiene la estructura, el rosa solo aparece donde hay que
+ * tocar, y el ocre queda reservado exclusivamente para las estrellas: una
+ * calificación nunca debe confundirse con un botón. Los neutros llevan una
+ * pizca de verde para que el blanco no se sienta de hospital.
+ *
+ * Los componentes de shadcn-vue leen los tokens genéricos (--primary,
+ * --muted…); los tokens --brand, --star, --ok… son los propios de Silvestre.
+ */
+@theme inline {
+    --font-sans:
+        'Karla', 'Segoe UI', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    --font-display:
+        'Bricolage Grotesque', 'Trebuchet MS', ui-sans-serif, system-ui,
+        sans-serif;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 3px);
+    --radius-sm: calc(var(--radius) - 5px);
+    --radius-xl: calc(var(--radius) + 6px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Propios de Silvestre */
+    --color-brand: var(--brand);
+    --color-brand-soft: var(--brand-soft);
+    --color-brand-foreground: var(--brand-foreground);
+    --color-surface: var(--surface);
+    --color-star: var(--star);
+    --color-ok: var(--ok);
+    --color-ok-soft: var(--ok-soft);
+    --color-wait: var(--wait);
+    --color-wait-soft: var(--wait-soft);
+    --color-move: var(--move);
+    --color-move-soft: var(--move-soft);
+}
+
+:root {
+    /* Papel: neutro con sesgo verde */
+    --background: #f3f4ee;
+    --foreground: #17231e;
+    --surface: #ffffff;
+
+    --card: #ffffff;
+    --card-foreground: #17231e;
+    --popover: #ffffff;
+    --popover-foreground: #17231e;
+
+    /* Rosa acción: solo donde se toca */
+    --primary: #c21a52;
+    --primary-foreground: #ffffff;
+
+    --secondary: #e9ebe2;
+    --secondary-foreground: #17231e;
+    --muted: #e9ebe2;
+    --muted-foreground: #5b6a62;
+
+    /* Hover y selección: verde suave */
+    --accent: #dde9e1;
+    --accent-foreground: #0e4534;
+
+    --destructive: #ae3128;
+    --destructive-foreground: #ffffff;
+
+    --border: #d6dacb;
+    --input: #d6dacb;
+    --ring: #c21a52;
+
+    --brand: #0e4534;
+    --brand-soft: #dde9e1;
+    --brand-foreground: #f1f6f2;
+    --star: #b8791a;
+    --ok: #2c7a58;
+    --ok-soft: #dcede4;
+    --wait: #8c5b12;
+    --wait-soft: #f6e9d6;
+    --move: #6d4494;
+    --move-soft: #efe6f7;
+
+    --chart-1: #1c6b50;
+    --chart-2: #c21a52;
+    --chart-3: #b8791a;
+    --chart-4: #6d4494;
+    --chart-5: #5b6a62;
+
+    --radius: 0.8rem;
+
+    --sidebar-background: #ffffff;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #17231e;
+    --sidebar-primary: #0e4534;
+    --sidebar-primary-foreground: #f1f6f2;
+    --sidebar-accent: #fae0e8;
+    --sidebar-accent-foreground: #a81445;
+    --sidebar-border: #d6dacb;
+    --sidebar-ring: #c21a52;
+}
+
+.dark {
+    --background: #0d1411;
+    --foreground: #e9efea;
+    --surface: #151e19;
+
+    --card: #151e19;
+    --card-foreground: #e9efea;
+    --popover: #151e19;
+    --popover-foreground: #e9efea;
+
+    --primary: #ff6e9c;
+    --primary-foreground: #2b0713;
+
+    --secondary: #1d2822;
+    --secondary-foreground: #e9efea;
+    --muted: #1d2822;
+    --muted-foreground: #96a69d;
+
+    --accent: #15302a;
+    --accent-foreground: #42cda1;
+
+    --destructive: #ee7367;
+    --destructive-foreground: #2b0a07;
+
+    --border: #2c3830;
+    --input: #2c3830;
+    --ring: #ff6e9c;
+
+    --brand: #42cda1;
+    --brand-soft: #15302a;
+    --brand-foreground: #0d1411;
+    --star: #e0ac4b;
+    --ok: #4fc28d;
+    --ok-soft: #15302a;
+    --wait: #e0b36a;
+    --wait-soft: #33260f;
+    --move: #c0a3e4;
+    --move-soft: #2a1f3b;
+
+    --chart-1: #42cda1;
+    --chart-2: #ff6e9c;
+    --chart-3: #e0ac4b;
+    --chart-4: #c0a3e4;
+    --chart-5: #96a69d;
+
+    --sidebar-background: #151e19;
+    --sidebar: #151e19;
+    --sidebar-foreground: #e9efea;
+    --sidebar-primary: #42cda1;
+    --sidebar-primary-foreground: #0d1411;
+    --sidebar-accent: #38141f;
+    --sidebar-accent-foreground: #ff8fb4;
+    --sidebar-border: #2c3830;
+    --sidebar-ring: #ff6e9c;
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--border);
+    }
+
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+    }
+
+    ::selection {
+        background: color-mix(in srgb, var(--primary) 22%, transparent);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
