@@ -24,27 +24,27 @@ recibe reseñas con estrellas y gana seguidores.
 Quien compra abre su **Inicio** y ve, en una sola lista: lo nuevo de los
 negocios que sigue, negocios sugeridos y publicidad de quienes pagan plan.
 
-|  | |
-|---|---|
-| **Dónde arranca** | Ciudad de Guatemala |
+|                               |                                                                                                                   |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Dónde arranca**             | Ciudad de Guatemala                                                                                               |
 | **Cómo se cobra entre ellos** | El cliente le paga **directo** al negocio (efectivo, transferencia, contra entrega). Silvestre no toca ese dinero |
-| **De qué vive Silvestre** | Solo de las suscripciones Pro: $4 al mes u $8 por 3 meses, por transferencia |
-| **Qué cuesta usarlo** | Nada. Publicar, vender, historias y reseñas son gratis |
+| **De qué vive Silvestre**     | Solo de las suscripciones Pro: $4 al mes u $8 por 3 meses, por transferencia                                      |
+| **Qué cuesta usarlo**         | Nada. Publicar, vender, historias y reseñas son gratis                                                            |
 
 ## Cómo se ve
 
-|  |  |
-|---|---|
-| **Inicio**, al estilo de una red social | **Perfil del negocio** |
-| ![Inicio](docs/capturas/inicio-escritorio.png) | ![Perfil](docs/capturas/perfil-escritorio.png) |
-| **Panel del negocio**: qué le falta para vender | **Publicar**: publicación, historia o perfil |
-| ![Panel](docs/capturas/panel-negocio.png) | ![Publicar](docs/capturas/publicar.png) |
+|                                                 |                                                |
+| ----------------------------------------------- | ---------------------------------------------- |
+| **Inicio**, al estilo de una red social         | **Perfil del negocio**                         |
+| ![Inicio](docs/capturas/inicio-escritorio.png)  | ![Perfil](docs/capturas/perfil-escritorio.png) |
+| **Panel del negocio**: qué le falta para vender | **Publicar**: publicación, historia o perfil   |
+| ![Panel](docs/capturas/panel-negocio.png)       | ![Publicar](docs/capturas/publicar.png)        |
 
 <details>
 <summary><b>En el celular</b> y <b>el panel de administración</b></summary>
 
-| En el celular | Administración | Planes |
-|---|---|---|
+| En el celular                                | Administración                                      | Planes                              |
+| -------------------------------------------- | --------------------------------------------------- | ----------------------------------- |
 | ![Celular](docs/capturas/inicio-celular.png) | ![Administración](docs/capturas/administracion.png) | ![Planes](docs/capturas/planes.png) |
 
 </details>
@@ -73,14 +73,14 @@ php artisan dev             # abre http://localhost:8000
 
 La contraseña de todas es **`secret123`**.
 
-| Correo | Quién es | Qué vas a ver |
-|---|---|---|
-| `ana@test.gt` | Una clienta | El Inicio: publicaciones, historias, reacciones y comentarios |
-| `kari@test.gt` | Dueña de Uñas por Kari | Modo negocio: panel, publicar, historias, plan Pro pagado |
-| `chela@test.gt` | Dueña de Galletas de la Abuela Chela | Un negocio en sus días de prueba |
-| `rosa@test.gt` | Dueña de Vivero Las Orquídeas | Un negocio en plan Gratis, con video |
-| `nuevo@test.gt` | Se registró y aún no abre su negocio | El paso a paso para crear un negocio |
-| `admin@test.gt` | Equipo de Silvestre | El panel de administración en `/admin` |
+| Correo          | Quién es                             | Qué vas a ver                                                 |
+| --------------- | ------------------------------------ | ------------------------------------------------------------- |
+| `ana@test.gt`   | Una clienta                          | El Inicio: publicaciones, historias, reacciones y comentarios |
+| `kari@test.gt`  | Dueña de Uñas por Kari               | Modo negocio: panel, publicar, historias, plan Pro pagado     |
+| `chela@test.gt` | Dueña de Galletas de la Abuela Chela | Un negocio en sus días de prueba                              |
+| `rosa@test.gt`  | Dueña de Vivero Las Orquídeas        | Un negocio en plan Gratis, con video                          |
+| `nuevo@test.gt` | Se registró y aún no abre su negocio | El paso a paso para crear un negocio                          |
+| `admin@test.gt` | Equipo de Silvestre                  | El panel de administración en `/admin`                        |
 
 **Cambia de modo** con el botón de arriba a la izquierda: la misma cuenta sirve
 para comprar y para administrar tu negocio.
