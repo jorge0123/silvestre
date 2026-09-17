@@ -16,14 +16,21 @@ const isGuest = computed(() => !page.props.auth?.user);
 
 // Respuesta inmediata en pantalla; el servidor confirma por detrás.
 const on = ref(props.following);
-watch(() => props.following, (v) => (on.value = v));
+watch(
+    () => props.following,
+    (v) => (on.value = v),
+);
 
 function toggle(): void {
     on.value = !on.value;
-    router.post(follow(props.slug).url, {}, {
-        preserveScroll: true,
-        onError: () => (on.value = !on.value),
-    });
+    router.post(
+        follow(props.slug).url,
+        {},
+        {
+            preserveScroll: true,
+            onError: () => (on.value = !on.value),
+        },
+    );
 }
 
 const classes = computed(() => [
@@ -39,7 +46,13 @@ const classes = computed(() => [
     <Link v-if="isGuest" :href="login()" :class="classes">
         <Plus class="size-4" /> Seguir
     </Link>
-    <button v-else type="button" :class="classes" :aria-pressed="on" @click="toggle">
+    <button
+        v-else
+        type="button"
+        :class="classes"
+        :aria-pressed="on"
+        @click="toggle"
+    >
         <Check v-if="on" class="size-4" />
         <Plus v-else class="size-4" />
         {{ on ? 'Siguiendo' : 'Seguir' }}

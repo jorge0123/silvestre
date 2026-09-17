@@ -140,8 +140,8 @@ const pillars = [
                     <Star v-for="n in 5" :key="n" class="size-4 fill-current" />
                 </span>
                 <p class="text-muted-foreground text-sm">
-                    Una reseña por persona, solo tras un pedido entregado.
-                    Pagar da visibilidad, nunca estrellas.
+                    Una reseña por persona, solo tras un pedido entregado. Pagar
+                    da visibilidad, nunca estrellas.
                 </p>
             </section>
         </main>

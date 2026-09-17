@@ -95,7 +95,9 @@ function submit(): void {
         </div>
 
         <fieldset class="grid gap-3">
-            <legend class="mb-1 text-sm font-medium">¿Qué tipo de negocio es?</legend>
+            <legend class="mb-1 text-sm font-medium">
+                ¿Qué tipo de negocio es?
+            </legend>
             <div class="grid gap-3 sm:grid-cols-2">
                 <ChoiceCard
                     v-for="kind in options.kinds"

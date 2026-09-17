@@ -29,7 +29,8 @@ const days = reactive<Record<number, Day>>(
     Object.fromEntries(
         props.options.weekdays.map((d) => {
             const row = saved.find((h) => h.weekday === d.value);
-            const defaultOn = saved.length === 0 && d.value >= 1 && d.value <= 5;
+            const defaultOn =
+                saved.length === 0 && d.value >= 1 && d.value <= 5;
 
             return [
                 d.value,
@@ -50,12 +51,17 @@ const orderedDays = computed(() =>
     ),
 );
 
-const hoursError = computed(() =>
-    Object.entries(form.errors).find(([key]) => key.startsWith('hours'))?.[1],
+const hoursError = computed(
+    () =>
+        Object.entries(form.errors).find(([key]) =>
+            key.startsWith('hours'),
+        )?.[1],
 );
 
 function copyToAll(): void {
-    const first = orderedDays.value.map((d) => days[d.value]).find((d) => d.enabled);
+    const first = orderedDays.value
+        .map((d) => days[d.value])
+        .find((d) => d.enabled);
 
     if (!first) {
         return;
@@ -70,18 +76,16 @@ function copyToAll(): void {
 }
 
 function submit(): void {
-    form
-        .transform((data) => ({
-            ...data,
-            hours: Object.entries(days)
-                .filter(([, d]) => d.enabled)
-                .map(([weekday, d]) => ({
-                    weekday: Number(weekday),
-                    opens_at: d.opens_at,
-                    closes_at: d.closes_at,
-                })),
-        }))
-        .post(update('ubicacion').url, { preserveScroll: true });
+    form.transform((data) => ({
+        ...data,
+        hours: Object.entries(days)
+            .filter(([, d]) => d.enabled)
+            .map(([weekday, d]) => ({
+                weekday: Number(weekday),
+                opens_at: d.opens_at,
+                closes_at: d.closes_at,
+            })),
+    })).post(update('ubicacion').url, { preserveScroll: true });
 }
 </script>
 
@@ -90,9 +94,18 @@ function submit(): void {
         <div class="grid gap-5 sm:grid-cols-2">
             <div class="grid gap-2">
                 <Label for="zone_id">Zona</Label>
-                <select id="zone_id" v-model="form.zone_id" :class="selectClass" required>
+                <select
+                    id="zone_id"
+                    v-model="form.zone_id"
+                    :class="selectClass"
+                    required
+                >
                     <option value="" disabled>Elige tu zona</option>
-                    <option v-for="zone in options.zones" :key="zone.id" :value="zone.id">
+                    <option
+                        v-for="zone in options.zones"
+                        :key="zone.id"
+                        :value="zone.id"
+                    >
                         {{ zone.name }}
                     </option>
                 </select>
@@ -122,7 +135,10 @@ function submit(): void {
 
             <div class="grid gap-2 sm:col-span-2">
                 <Label for="address">
-                    Dirección <span class="text-muted-foreground font-normal">(opcional por ahora)</span>
+                    Dirección
+                    <span class="text-muted-foreground font-normal"
+                        >(opcional por ahora)</span
+                    >
                 </Label>
                 <Input
                     id="address"
@@ -158,7 +174,9 @@ function submit(): void {
                     :key="weekday.value"
                     class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3"
                 >
-                    <label class="flex min-w-32 cursor-pointer items-center gap-3">
+                    <label
+                        class="flex min-w-32 cursor-pointer items-center gap-3"
+                    >
                         <input
                             v-model="days[weekday.value].enabled"
                             type="checkbox"
@@ -166,7 +184,11 @@ function submit(): void {
                         />
                         <span
                             class="text-sm font-bold"
-                            :class="days[weekday.value].enabled ? '' : 'text-muted-foreground'"
+                            :class="
+                                days[weekday.value].enabled
+                                    ? ''
+                                    : 'text-muted-foreground'
+                            "
                             >{{ weekday.label }}</span
                         >
                     </label>
@@ -189,7 +211,9 @@ function submit(): void {
                             :aria-label="`${weekday.label}: cierra`"
                         />
                     </div>
-                    <span v-else class="text-muted-foreground ml-auto text-sm">Cerrado</span>
+                    <span v-else class="text-muted-foreground ml-auto text-sm"
+                        >Cerrado</span
+                    >
                 </div>
             </div>
             <InputError :message="hoursError" />

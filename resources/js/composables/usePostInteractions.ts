@@ -45,12 +45,19 @@ export function usePostInteractions() {
         state.reactions += state.reacted ? 1 : -1;
 
         try {
-            const res = await api<{ reacted: boolean; reactions: number }>('POST', reactRoute(post.id).url);
+            const res = await api<{ reacted: boolean; reactions: number }>(
+                'POST',
+                reactRoute(post.id).url,
+            );
             state.reacted = res.reacted;
             state.reactions = res.reactions;
         } catch (error) {
             Object.assign(state, before);
-            toast.error(error instanceof ApiError ? error.message : 'No se pudo guardar tu reacción.');
+            toast.error(
+                error instanceof ApiError
+                    ? error.message
+                    : 'No se pudo guardar tu reacción.',
+            );
         }
     }
 

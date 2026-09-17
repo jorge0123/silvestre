@@ -37,10 +37,15 @@ const initials = computed(() =>
         class="inline-grid flex-none place-items-center rounded-full"
         :class="[
             sizes[size],
-            ring ? 'bg-[conic-gradient(from_210deg,var(--primary),var(--star),var(--brand),var(--primary))] p-[2.5px]' : '',
+            ring
+                ? 'bg-[conic-gradient(from_210deg,var(--primary),var(--star),var(--brand),var(--primary))] p-[2.5px]'
+                : '',
         ]"
     >
-        <span class="bg-background grid size-full place-items-center overflow-hidden rounded-full" :class="ring ? 'p-[2px]' : ''">
+        <span
+            class="bg-background grid size-full place-items-center overflow-hidden rounded-full"
+            :class="ring ? 'p-[2px]' : ''"
+        >
             <img
                 v-if="src"
                 :src="src"
@@ -49,7 +54,10 @@ const initials = computed(() =>
                 :loading="size === 'xl' ? 'eager' : 'lazy'"
                 decoding="async"
             />
-            <span v-else class="bg-brand-soft text-brand grid size-full place-items-center rounded-full text-sm font-bold">
+            <span
+                v-else
+                class="bg-brand-soft text-brand grid size-full place-items-center rounded-full text-sm font-bold"
+            >
                 {{ initials }}
             </span>
         </span>

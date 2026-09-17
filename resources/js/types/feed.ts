@@ -52,7 +52,12 @@ export type PostVariant = 'following' | 'discovery' | 'sponsored';
 
 export type FeedItem =
     | { kind: 'post'; key: string; variant: PostVariant; post: PostItem }
-    | { kind: 'suggested'; key: string; title: string; businesses: BusinessCard[] }
+    | {
+          kind: 'suggested';
+          key: string;
+          title: string;
+          businesses: BusinessCard[];
+      }
     | { kind: 'caught_up'; key: string };
 
 export type FeedPage = {

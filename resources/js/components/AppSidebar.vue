@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
-import { ExternalLink, House, ImagePlus, LayoutDashboard, ShieldCheck } from '@lucide/vue';
+import {
+    ExternalLink,
+    House,
+    ImagePlus,
+    LayoutDashboard,
+    ShieldCheck,
+} from '@lucide/vue';
 import { computed } from 'vue';
 import AppLogo from '@/components/AppLogo.vue';
 import ModeSwitcher from '@/components/ModeSwitcher.vue';
@@ -29,11 +35,21 @@ const mainNavItems = computed<NavItem[]>(() => [
     ...(mode.value?.type === 'business' && mode.value.business
         ? [
               { title: 'Publicar', href: publish(), icon: ImagePlus },
-              { title: 'Panel de mi negocio', href: dashboard(), icon: LayoutDashboard },
-              { title: 'Ver mi perfil público', href: businessShow(mode.value.business.slug), icon: ExternalLink },
+              {
+                  title: 'Panel de mi negocio',
+                  href: dashboard(),
+                  icon: LayoutDashboard,
+              },
+              {
+                  title: 'Ver mi perfil público',
+                  href: businessShow(mode.value.business.slug),
+                  icon: ExternalLink,
+              },
           ]
         : []),
-    ...(page.props.auth.user?.is_admin ? [{ title: 'Administración', href: adminIndex(), icon: ShieldCheck }] : []),
+    ...(page.props.auth.user?.is_admin
+        ? [{ title: 'Administración', href: adminIndex(), icon: ShieldCheck }]
+        : []),
 ]);
 </script>
 

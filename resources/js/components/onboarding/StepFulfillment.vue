@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
-import { Home, Laptop, MapPin, Package, Plus, Store, Trash2, Truck } from '@lucide/vue';
+import {
+    Home,
+    Laptop,
+    MapPin,
+    Package,
+    Plus,
+    Store,
+    Trash2,
+    Truck,
+} from '@lucide/vue';
 import { computed } from 'vue';
 import HelpHint from '@/components/guide/HelpHint.vue';
 import InputError from '@/components/InputError.vue';
@@ -92,7 +101,9 @@ function submit(): void {
         <fieldset v-if="sellsProducts" class="grid gap-3">
             <legend class="mb-1 text-sm font-medium">
                 ¿Cómo entregas tus productos?
-                <span class="text-muted-foreground font-normal">Elige todas las que uses.</span>
+                <span class="text-muted-foreground font-normal"
+                    >Elige todas las que uses.</span
+                >
             </legend>
             <ChoiceCard
                 v-for="method in options.fulfillmentMethods"
@@ -111,20 +122,49 @@ function submit(): void {
                 class="bg-muted/60 grid gap-4 rounded-xl p-4 sm:grid-cols-2"
             >
                 <div class="grid gap-2">
-                    <Label for="shipping_rate">Costo de envío por paquetería</Label>
+                    <Label for="shipping_rate"
+                        >Costo de envío por paquetería</Label
+                    >
                     <div class="relative">
-                        <span class="text-muted-foreground pointer-events-none absolute inset-y-0 left-3 flex items-center font-bold">{{ options.currency }}</span>
-                        <Input id="shipping_rate" v-model="form.shipping_rate" type="number" min="0" step="0.01" inputmode="decimal" class="h-11 pl-8" placeholder="35" />
+                        <span
+                            class="text-muted-foreground pointer-events-none absolute inset-y-0 left-3 flex items-center font-bold"
+                            >{{ options.currency }}</span
+                        >
+                        <Input
+                            id="shipping_rate"
+                            v-model="form.shipping_rate"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal"
+                            class="h-11 pl-8"
+                            placeholder="35"
+                        />
                     </div>
                     <InputError :message="form.errors.shipping_rate" />
                 </div>
                 <div class="grid gap-2">
                     <Label for="free_shipping_from">
-                        Envío gratis desde <span class="text-muted-foreground font-normal">(opcional)</span>
+                        Envío gratis desde
+                        <span class="text-muted-foreground font-normal"
+                            >(opcional)</span
+                        >
                     </Label>
                     <div class="relative">
-                        <span class="text-muted-foreground pointer-events-none absolute inset-y-0 left-3 flex items-center font-bold">{{ options.currency }}</span>
-                        <Input id="free_shipping_from" v-model="form.free_shipping_from" type="number" min="0" step="0.01" inputmode="decimal" class="h-11 pl-8" placeholder="300" />
+                        <span
+                            class="text-muted-foreground pointer-events-none absolute inset-y-0 left-3 flex items-center font-bold"
+                            >{{ options.currency }}</span
+                        >
+                        <Input
+                            id="free_shipping_from"
+                            v-model="form.free_shipping_from"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal"
+                            class="h-11 pl-8"
+                            placeholder="300"
+                        />
                     </div>
                 </div>
             </div>
@@ -133,7 +173,9 @@ function submit(): void {
         <fieldset v-if="sellsServices" class="grid gap-3">
             <legend class="mb-1 text-sm font-medium">
                 ¿Dónde das tus servicios?
-                <span class="text-muted-foreground font-normal">Elige todas las que apliquen.</span>
+                <span class="text-muted-foreground font-normal"
+                    >Elige todas las que apliquen.</span
+                >
             </legend>
             <ChoiceCard
                 v-for="mode in options.serviceModes"
@@ -147,28 +189,60 @@ function submit(): void {
             />
             <InputError :message="form.errors.service_modes" />
 
-            <div v-if="form.service_modes.includes('at_customer')" class="bg-muted/60 grid gap-2 rounded-xl p-4">
+            <div
+                v-if="form.service_modes.includes('at_customer')"
+                class="bg-muted/60 grid gap-2 rounded-xl p-4"
+            >
                 <Label for="travel_fee">Costo por ir a domicilio</Label>
                 <div class="relative max-w-xs">
-                    <span class="text-muted-foreground pointer-events-none absolute inset-y-0 left-3 flex items-center font-bold">{{ options.currency }}</span>
-                    <Input id="travel_fee" v-model="form.travel_fee" type="number" min="0" step="0.01" inputmode="decimal" class="h-11 pl-8" placeholder="0" />
+                    <span
+                        class="text-muted-foreground pointer-events-none absolute inset-y-0 left-3 flex items-center font-bold"
+                        >{{ options.currency }}</span
+                    >
+                    <Input
+                        id="travel_fee"
+                        v-model="form.travel_fee"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        inputmode="decimal"
+                        class="h-11 pl-8"
+                        placeholder="0"
+                    />
                 </div>
-                <p class="text-muted-foreground text-xs">Escribe 0 si no cobras el traslado.</p>
+                <p class="text-muted-foreground text-xs">
+                    Escribe 0 si no cobras el traslado.
+                </p>
             </div>
         </fieldset>
 
-        <Transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1">
+        <Transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="opacity-0 -translate-y-1"
+        >
             <div v-if="needsAddress" class="grid gap-2">
-                <Label for="address">Dirección de tu local o punto de entrega</Label>
-                <Input id="address" v-model="form.address" class="h-11" placeholder="Ej. 12 calle 3-45, zona 10" autocomplete="street-address" />
+                <Label for="address"
+                    >Dirección de tu local o punto de entrega</Label
+                >
+                <Input
+                    id="address"
+                    v-model="form.address"
+                    class="h-11"
+                    placeholder="Ej. 12 calle 3-45, zona 10"
+                    autocomplete="street-address"
+                />
                 <InputError :message="form.errors.address" />
                 <p class="text-muted-foreground text-xs">
-                    La necesitamos porque elegiste que te visiten o recojan pedidos.
+                    La necesitamos porque elegiste que te visiten o recojan
+                    pedidos.
                 </p>
             </div>
         </Transition>
 
-        <Transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1">
+        <Transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="opacity-0 -translate-y-1"
+        >
             <fieldset v-if="needsZones" class="grid gap-3">
                 <legend class="flex items-center gap-2 text-sm font-medium">
                     <MapPin class="size-4" />
@@ -188,18 +262,50 @@ function submit(): void {
                 >
                     <div class="col-span-2 grid gap-1.5 sm:col-span-1">
                         <Label :for="`zone-${i}`" class="text-xs">Zona</Label>
-                        <select :id="`zone-${i}`" v-model="row.zone_id" :class="selectClass">
+                        <select
+                            :id="`zone-${i}`"
+                            v-model="row.zone_id"
+                            :class="selectClass"
+                        >
                             <option :value="null" disabled>Elige</option>
-                            <option v-for="zone in availableZones(row.zone_id)" :key="zone.id" :value="zone.id">{{ zone.name }}</option>
+                            <option
+                                v-for="zone in availableZones(row.zone_id)"
+                                :key="zone.id"
+                                :value="zone.id"
+                            >
+                                {{ zone.name }}
+                            </option>
                         </select>
                     </div>
                     <div class="grid gap-1.5">
-                        <Label :for="`fee-${i}`" class="text-xs">Costo ({{ options.currency }})</Label>
-                        <Input :id="`fee-${i}`" v-model="row.fee" type="number" min="0" step="0.01" inputmode="decimal" class="h-11" placeholder="0" />
+                        <Label :for="`fee-${i}`" class="text-xs"
+                            >Costo ({{ options.currency }})</Label
+                        >
+                        <Input
+                            :id="`fee-${i}`"
+                            v-model="row.fee"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal"
+                            class="h-11"
+                            placeholder="0"
+                        />
                     </div>
                     <div class="grid gap-1.5">
-                        <Label :for="`min-${i}`" class="text-xs">Pedido mínimo</Label>
-                        <Input :id="`min-${i}`" v-model="row.min_order" type="number" min="0" step="0.01" inputmode="decimal" class="h-11" placeholder="0" />
+                        <Label :for="`min-${i}`" class="text-xs"
+                            >Pedido mínimo</Label
+                        >
+                        <Input
+                            :id="`min-${i}`"
+                            v-model="row.min_order"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            inputmode="decimal"
+                            class="h-11"
+                            placeholder="0"
+                        />
                     </div>
                     <button
                         type="button"
@@ -209,7 +315,10 @@ function submit(): void {
                     >
                         <Trash2 class="size-4" />
                     </button>
-                    <InputError class="col-span-2 sm:col-span-4" :message="zoneError(i)" />
+                    <InputError
+                        class="col-span-2 sm:col-span-4"
+                        :message="zoneError(i)"
+                    />
                 </div>
 
                 <button

@@ -57,9 +57,17 @@ onBeforeUnmount(() => {
                         aria-modal="true"
                         :aria-label="post.title"
                         class="h-dvh w-full overflow-hidden md:h-[min(88vh,820px)] md:rounded-2xl md:shadow-2xl"
-                        :class="post.media.length ? 'md:max-w-6xl' : 'md:max-w-xl'"
+                        :class="
+                            post.media.length ? 'md:max-w-6xl' : 'md:max-w-xl'
+                        "
                     >
-                        <PostDetail :key="post.id" :post="post" :focus-comments="focusComments" closable @close="open = false" />
+                        <PostDetail
+                            :key="post.id"
+                            :post="post"
+                            :focus-comments="focusComments"
+                            closable
+                            @close="open = false"
+                        />
                     </div>
                 </Transition>
             </div>

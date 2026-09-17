@@ -11,11 +11,20 @@ const filled = computed(() => Math.round(props.value));
 </script>
 
 <template>
-    <span class="inline-flex gap-0.5" :aria-label="`${value} de 5 estrellas`" role="img">
+    <span
+        class="inline-flex gap-0.5"
+        :aria-label="`${value} de 5 estrellas`"
+        role="img"
+    >
         <Star
             v-for="n in 5"
             :key="n"
-            :class="[size, n <= filled ? 'text-star fill-current' : 'text-muted-foreground/30 fill-current']"
+            :class="[
+                size,
+                n <= filled
+                    ? 'text-star fill-current'
+                    : 'text-muted-foreground/30 fill-current',
+            ]"
             aria-hidden="true"
         />
     </span>

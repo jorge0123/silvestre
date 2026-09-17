@@ -1,7 +1,22 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { ChevronLeft, ChevronRight, Pause, Play, Volume2, VolumeX, X } from '@lucide/vue';
-import { computed, nextTick, onBeforeUnmount, ref, useTemplateRef, watch } from 'vue';
+import {
+    ChevronLeft,
+    ChevronRight,
+    Pause,
+    Play,
+    Volume2,
+    VolumeX,
+    X,
+} from '@lucide/vue';
+import {
+    computed,
+    nextTick,
+    onBeforeUnmount,
+    ref,
+    useTemplateRef,
+    watch,
+} from 'vue';
 import BusinessAvatar from '@/components/feed/BusinessAvatar.vue';
 import { show as businessShow } from '@/routes/business';
 import type { StoryGroup } from '@/types/feed';
@@ -39,7 +54,10 @@ function tick(now: number): void {
         return;
     }
     if (!paused.value) {
-        progress.value = Math.min(1, (elapsedBeforePause + now - startedAt) / IMAGE_MS);
+        progress.value = Math.min(
+            1,
+            (elapsedBeforePause + now - startedAt) / IMAGE_MS,
+        );
         if (progress.value >= 1) {
             next();
             return;
@@ -210,12 +228,18 @@ onBeforeUnmount(() => {
                     type="button"
                     class="absolute left-4 hidden size-11 place-items-center rounded-full bg-white/15 text-white hover:bg-white/25 md:grid"
                     aria-label="Negocio anterior"
-                    @click="gi--; si = 0; start()"
+                    @click="
+                        gi--;
+                        si = 0;
+                        start();
+                    "
                 >
                     <ChevronLeft class="size-6" />
                 </button>
 
-                <div class="relative h-full w-full overflow-hidden bg-black md:h-[92vh] md:w-auto md:aspect-[9/16] md:rounded-2xl">
+                <div
+                    class="relative h-full w-full overflow-hidden bg-black md:aspect-[9/16] md:h-[92vh] md:w-auto md:rounded-2xl"
+                >
                     <!-- Contenido -->
                     <video
                         v-if="story.type === 'video'"
@@ -237,8 +261,12 @@ onBeforeUnmount(() => {
                         class="absolute inset-0 size-full object-cover"
                     />
 
-                    <div class="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent" />
-                    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 to-transparent" />
+                    <div
+                        class="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent"
+                    />
+                    <div
+                        class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/80 to-transparent"
+                    />
 
                     <!-- Zonas para tocar -->
                     <div class="absolute inset-0 flex">
@@ -261,34 +289,84 @@ onBeforeUnmount(() => {
                     </div>
 
                     <!-- Barras de progreso -->
-                    <div class="absolute inset-x-3 top-3 flex gap-1" aria-hidden="true">
-                        <span v-for="(s, i) in group.stories" :key="s.id" class="h-[3px] flex-1 overflow-hidden rounded-full bg-white/35">
+                    <div
+                        class="absolute inset-x-3 top-3 flex gap-1"
+                        aria-hidden="true"
+                    >
+                        <span
+                            v-for="(s, i) in group.stories"
+                            :key="s.id"
+                            class="h-[3px] flex-1 overflow-hidden rounded-full bg-white/35"
+                        >
                             <span
                                 class="block h-full rounded-full bg-white"
-                                :style="{ width: i < si ? '100%' : i === si ? `${progress * 100}%` : '0%' }"
+                                :style="{
+                                    width:
+                                        i < si
+                                            ? '100%'
+                                            : i === si
+                                              ? `${progress * 100}%`
+                                              : '0%',
+                                }"
                             />
                         </span>
                     </div>
 
                     <!-- Encabezado -->
-                    <div class="absolute inset-x-3 top-6 flex items-center gap-2.5 text-white">
-                        <Link :href="businessShow(group.business.slug)" class="flex min-w-0 items-center gap-2.5" @click="close">
-                            <BusinessAvatar :src="group.business.avatar" :name="group.business.name" size="sm" />
+                    <div
+                        class="absolute inset-x-3 top-6 flex items-center gap-2.5 text-white"
+                    >
+                        <Link
+                            :href="businessShow(group.business.slug)"
+                            class="flex min-w-0 items-center gap-2.5"
+                            @click="close"
+                        >
+                            <BusinessAvatar
+                                :src="group.business.avatar"
+                                :name="group.business.name"
+                                size="sm"
+                            />
                             <span class="min-w-0">
-                                <span class="block truncate text-sm font-bold">{{ group.business.name }}</span>
-                                <span class="block text-xs text-white/70">{{ story.ago }}</span>
+                                <span
+                                    class="block truncate text-sm font-bold"
+                                    >{{ group.business.name }}</span
+                                >
+                                <span class="block text-xs text-white/70">{{
+                                    story.ago
+                                }}</span>
                             </span>
                         </Link>
                         <span class="ml-auto flex items-center gap-1">
-                            <button type="button" class="grid size-9 place-items-center rounded-full hover:bg-white/15" :aria-label="paused ? 'Reanudar' : 'Pausar'" @click="setPaused(!paused)">
-                                <Play v-if="paused" class="size-5 fill-current" />
+                            <button
+                                type="button"
+                                class="grid size-9 place-items-center rounded-full hover:bg-white/15"
+                                :aria-label="paused ? 'Reanudar' : 'Pausar'"
+                                @click="setPaused(!paused)"
+                            >
+                                <Play
+                                    v-if="paused"
+                                    class="size-5 fill-current"
+                                />
                                 <Pause v-else class="size-5 fill-current" />
                             </button>
-                            <button v-if="story.type === 'video'" type="button" class="grid size-9 place-items-center rounded-full hover:bg-white/15" :aria-label="muted ? 'Activar sonido' : 'Silenciar'" @click="toggleMute">
+                            <button
+                                v-if="story.type === 'video'"
+                                type="button"
+                                class="grid size-9 place-items-center rounded-full hover:bg-white/15"
+                                :aria-label="
+                                    muted ? 'Activar sonido' : 'Silenciar'
+                                "
+                                @click="toggleMute"
+                            >
                                 <VolumeX v-if="muted" class="size-5" />
                                 <Volume2 v-else class="size-5" />
                             </button>
-                            <button type="button" class="grid size-9 place-items-center rounded-full hover:bg-white/15" aria-label="Cerrar historias" @click="close">
+                            <button
+                                type="button"
+                                class="grid size-9 place-items-center rounded-full hover:bg-white/15"
+                                aria-label="Cerrar historias"
+                                @click="close"
+                            >
                                 <X class="size-6" />
                             </button>
                         </span>
@@ -296,7 +374,10 @@ onBeforeUnmount(() => {
 
                     <!-- Texto y acción -->
                     <div class="absolute inset-x-4 bottom-6 text-white">
-                        <p v-if="story.caption" class="font-display text-xl leading-snug font-bold [text-shadow:0_1px_12px_rgba(0,0,0,.5)]">
+                        <p
+                            v-if="story.caption"
+                            class="font-display text-xl leading-snug font-bold [text-shadow:0_1px_12px_rgba(0,0,0,.5)]"
+                        >
                             {{ story.caption }}
                         </p>
                         <Link
@@ -314,7 +395,11 @@ onBeforeUnmount(() => {
                     type="button"
                     class="absolute right-4 hidden size-11 place-items-center rounded-full bg-white/15 text-white hover:bg-white/25 md:grid"
                     aria-label="Siguiente negocio"
-                    @click="gi++; si = 0; start()"
+                    @click="
+                        gi++;
+                        si = 0;
+                        start();
+                    "
                 >
                     <ChevronRight class="size-6" />
                 </button>

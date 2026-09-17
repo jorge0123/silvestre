@@ -34,20 +34,29 @@ export async function api<T>(
 ): Promise<T> {
     let response: Response;
 
+    // GET no lleva cuerpo: el navegador lo rechaza.
+    const init: RequestInit = {
+        method,
+        credentials: 'same-origin',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-XSRF-TOKEN': xsrfToken(),
+        },
+    };
+
+    if (body && method !== 'GET') {
+        init.body = JSON.stringify(body);
+    }
+
     try {
-        response = await fetch(url, {
-            method,
-            credentials: 'same-origin',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-XSRF-TOKEN': xsrfToken(),
-            },
-            body: body ? JSON.stringify(body) : undefined,
-        });
+        response = await fetch(url, init);
     } catch {
-        throw new ApiError('Sin conexión. Revisa tu internet e intenta otra vez.', 0);
+        throw new ApiError(
+            'Sin conexión. Revisa tu internet e intenta otra vez.',
+            0,
+        );
     }
 
     const data = await response.json().catch(() => null);
@@ -62,7 +71,10 @@ export async function api<T>(
     }
 
     if (response.status === 429) {
-        throw new ApiError('Vas muy rápido. Espera un momento e intenta de nuevo.', 429);
+        throw new ApiError(
+            'Vas muy rápido. Espera un momento e intenta de nuevo.',
+            429,
+        );
     }
 
     if (!response.ok) {

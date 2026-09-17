@@ -36,7 +36,10 @@ function onScroll(): void {
 function go(delta: number): void {
     const el = track.value;
     if (el) {
-        el.scrollTo({ left: (current.value + delta) * el.clientWidth, behavior: 'smooth' });
+        el.scrollTo({
+            left: (current.value + delta) * el.clientWidth,
+            behavior: 'smooth',
+        });
     }
 }
 
@@ -80,21 +83,30 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div class="group/carousel relative w-full overflow-hidden" :class="fit === 'contain' ? 'h-full bg-black' : 'bg-muted'">
+    <div
+        class="group/carousel relative w-full overflow-hidden"
+        :class="fit === 'contain' ? 'h-full bg-black' : 'bg-muted'"
+    >
         <div
             ref="track"
-            class="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            class="flex snap-x snap-mandatory [scrollbar-width:none] overflow-x-auto [&::-webkit-scrollbar]:hidden"
             :class="aspect"
             @scroll.passive="onScroll"
             @click="onTap"
         >
-            <div v-for="(item, i) in props.media" :key="i" class="relative h-full w-full flex-none snap-center">
+            <div
+                v-for="(item, i) in props.media"
+                :key="i"
+                class="relative h-full w-full flex-none snap-center"
+            >
                 <video
                     v-if="item.type === 'video'"
                     :src="item.url"
                     :poster="item.poster ?? undefined"
                     class="size-full"
-                    :class="fit === 'contain' ? 'object-contain' : 'object-cover'"
+                    :class="
+                        fit === 'contain' ? 'object-contain' : 'object-cover'
+                    "
                     muted
                     loop
                     playsinline
@@ -106,7 +118,9 @@ onBeforeUnmount(() => {
                     :src="item.url"
                     alt=""
                     class="size-full select-none"
-                    :class="fit === 'contain' ? 'object-contain' : 'object-cover'"
+                    :class="
+                        fit === 'contain' ? 'object-contain' : 'object-cover'
+                    "
                     loading="lazy"
                     decoding="async"
                     draggable="false"
@@ -124,7 +138,9 @@ onBeforeUnmount(() => {
         <slot />
 
         <template v-if="media.length > 1">
-            <span class="pointer-events-none absolute top-3 right-3 rounded-full bg-black/55 px-2 py-0.5 text-xs font-bold text-white tabular-nums">
+            <span
+                class="pointer-events-none absolute top-3 right-3 rounded-full bg-black/55 px-2 py-0.5 text-xs font-bold text-white tabular-nums"
+            >
                 {{ current + 1 }}/{{ media.length }}
             </span>
 
@@ -147,12 +163,17 @@ onBeforeUnmount(() => {
                 <ChevronRight class="size-5" />
             </button>
 
-            <div class="pointer-events-none absolute inset-x-0 bottom-2.5 flex justify-center gap-1.5" aria-hidden="true">
+            <div
+                class="pointer-events-none absolute inset-x-0 bottom-2.5 flex justify-center gap-1.5"
+                aria-hidden="true"
+            >
                 <span
                     v-for="(_, i) in media"
                     :key="i"
                     class="h-1.5 rounded-full bg-white shadow transition-all"
-                    :class="i === current ? 'w-4 opacity-100' : 'w-1.5 opacity-60'"
+                    :class="
+                        i === current ? 'w-4 opacity-100' : 'w-1.5 opacity-60'
+                    "
                 />
             </div>
         </template>

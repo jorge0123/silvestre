@@ -33,13 +33,29 @@ function openPost(post: PostItem): void {
         <meta name="description" :content="post.body.slice(0, 150)" />
     </Head>
 
-    <SiteLayout :breadcrumbs="[{ title: post.business.name, href: businessShow(post.business.slug) }, { title: 'Publicación', href: '#' }]">
+    <SiteLayout
+        :breadcrumbs="[
+            {
+                title: post.business.name,
+                href: businessShow(post.business.slug),
+            },
+            { title: 'Publicación', href: '#' },
+        ]"
+    >
         <div class="mx-auto max-w-6xl px-0 pb-12 sm:px-4">
             <div class="px-2 py-2 sm:px-0">
-                <BackButton :fallback="signedIn ? feed().url : businessShow(post.business.slug).url" />
+                <BackButton
+                    :fallback="
+                        signedIn
+                            ? feed().url
+                            : businessShow(post.business.slug).url
+                    "
+                />
             </div>
 
-            <div class="bg-card overflow-hidden border-y sm:rounded-2xl sm:border md:h-[min(84vh,820px)]">
+            <div
+                class="bg-card overflow-hidden border-y sm:rounded-2xl sm:border md:h-[min(84vh,820px)]"
+            >
                 <PostDetail :post="post" :contained="false" />
             </div>
 
@@ -54,7 +70,9 @@ function openPost(post: PostItem): void {
             </a>
 
             <section v-if="more.length" class="mt-10 px-4 sm:px-0">
-                <h2 class="font-display mb-4 text-lg font-bold">Más de {{ props.post.business.name }}</h2>
+                <h2 class="font-display mb-4 text-lg font-bold">
+                    Más de {{ props.post.business.name }}
+                </h2>
                 <div class="grid grid-cols-3 gap-1 sm:gap-2">
                     <button
                         v-for="p in more"
@@ -66,14 +84,26 @@ function openPost(post: PostItem): void {
                     >
                         <img
                             v-if="p.media[0]"
-                            :src="p.media[0].type === 'video' ? (p.media[0].poster ?? p.media[0].url) : p.media[0].url"
+                            :src="
+                                p.media[0].type === 'video'
+                                    ? (p.media[0].poster ?? p.media[0].url)
+                                    : p.media[0].url
+                            "
                             alt=""
                             class="size-full object-cover transition-transform duration-300 group-hover:scale-105"
                             loading="lazy"
                         />
-                        <span class="absolute top-2 right-2 text-white drop-shadow">
-                            <Play v-if="p.media.some((m) => m.type === 'video')" class="size-4 fill-current" />
-                            <Layers v-else-if="p.media.length > 1" class="size-4" />
+                        <span
+                            class="absolute top-2 right-2 text-white drop-shadow"
+                        >
+                            <Play
+                                v-if="p.media.some((m) => m.type === 'video')"
+                                class="size-4 fill-current"
+                            />
+                            <Layers
+                                v-else-if="p.media.length > 1"
+                                class="size-4"
+                            />
                         </span>
                     </button>
                 </div>

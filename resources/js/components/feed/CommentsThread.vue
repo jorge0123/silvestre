@@ -8,7 +8,10 @@ import CommentRow from '@/components/feed/CommentRow.vue';
 import { Spinner } from '@/components/ui/spinner';
 import { ApiError, api } from '@/lib/http';
 import { login } from '@/routes';
-import { index as commentsIndex, store as commentsStore } from '@/routes/posts/comments';
+import {
+    index as commentsIndex,
+    store as commentsStore,
+} from '@/routes/posts/comments';
 import type { CommentItem } from '@/types/feed';
 
 /**
@@ -23,9 +26,13 @@ const user = computed(() => page.props.auth?.user);
 
 // "Ana P.", igual que se muestra en los comentarios, para que las iniciales coincidan.
 const shortName = computed(() => {
-    const parts = String(user.value?.name ?? '').trim().split(/\s+/);
+    const parts = String(user.value?.name ?? '')
+        .trim()
+        .split(/\s+/);
 
-    return parts.length > 1 ? `${parts[0]} ${parts[parts.length - 1][0]}.` : parts[0];
+    return parts.length > 1
+        ? `${parts[0]} ${parts[parts.length - 1][0]}.`
+        : parts[0];
 });
 
 const comments = ref<CommentItem[]>([]);
@@ -43,7 +50,10 @@ async function load(): Promise<void> {
     loading.value = true;
     loadError.value = false;
     try {
-        const res = await api<{ comments: CommentItem[]; count: number }>('GET', commentsIndex(props.postId).url);
+        const res = await api<{ comments: CommentItem[]; count: number }>(
+            'GET',
+            commentsIndex(props.postId).url,
+        );
         comments.value = res.comments;
         emit('count', res.count);
     } catch {
@@ -72,14 +82,20 @@ async function send(): Promise<void> {
 
     sending.value = true;
     try {
-        const res = await api<{ comment: CommentItem; count: number }>('POST', commentsStore(props.postId).url, {
-            body: text,
-            parent_id: replyingTo.value?.id ?? null,
-        });
+        const res = await api<{ comment: CommentItem; count: number }>(
+            'POST',
+            commentsStore(props.postId).url,
+            {
+                body: text,
+                parent_id: replyingTo.value?.id ?? null,
+            },
+        );
 
         const created = res.comment;
         if (created.parentId) {
-            comments.value.find((c) => c.id === created.parentId)?.replies.push(created);
+            comments.value
+                .find((c) => c.id === created.parentId)
+                ?.replies.push(created);
         } else {
             comments.value.push(created);
         }
@@ -90,9 +106,15 @@ async function send(): Promise<void> {
 
         await nextTick();
         autosize();
-        document.getElementById(`comment-${created.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        document
+            .getElementById(`comment-${created.id}`)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     } catch (error) {
-        toast.error(error instanceof ApiError ? error.firstError() : 'No se pudo publicar tu comentario.');
+        toast.error(
+            error instanceof ApiError
+                ? error.firstError()
+                : 'No se pudo publicar tu comentario.',
+        );
     } finally {
         sending.value = false;
     }
@@ -100,7 +122,11 @@ async function send(): Promise<void> {
 
 function onKey(event: KeyboardEvent): void {
     // Enter envía; Shift+Enter hace salto de línea. En el celular, el botón.
-    if (event.key === 'Enter' && !event.shiftKey && window.matchMedia('(hover: hover)').matches) {
+    if (
+        event.key === 'Enter' &&
+        !event.shiftKey &&
+        window.matchMedia('(hover: hover)').matches
+    ) {
         event.preventDefault();
         void send();
     }
@@ -144,21 +170,47 @@ defineExpose({ focus: () => composer.value?.focus() });
     <div class="flex min-h-0 flex-1 flex-col">
         <div ref="list" class="flex-1 px-4 py-3">
             <!-- Cargando -->
-            <div v-if="loading" class="flex flex-col gap-4" aria-busy="true" aria-label="Cargando comentarios">
+            <div
+                v-if="loading"
+                class="flex flex-col gap-4"
+                aria-busy="true"
+                aria-label="Cargando comentarios"
+            >
                 <div v-for="n in 3" :key="n" class="flex gap-2.5">
-                    <span class="bg-muted size-9 flex-none animate-pulse rounded-full" />
-                    <span class="bg-muted h-14 animate-pulse rounded-2xl" :style="{ width: `${50 + n * 12}%` }" />
+                    <span
+                        class="bg-muted size-9 flex-none animate-pulse rounded-full"
+                    />
+                    <span
+                        class="bg-muted h-14 animate-pulse rounded-2xl"
+                        :style="{ width: `${50 + n * 12}%` }"
+                    />
                 </div>
             </div>
 
-            <div v-else-if="loadError" class="text-muted-foreground py-8 text-center text-sm">
+            <div
+                v-else-if="loadError"
+                class="text-muted-foreground py-8 text-center text-sm"
+            >
                 No se pudieron cargar los comentarios.
-                <button type="button" class="text-primary font-bold" @click="load">Reintentar</button>
+                <button
+                    type="button"
+                    class="text-primary font-bold"
+                    @click="load"
+                >
+                    Reintentar
+                </button>
             </div>
 
-            <div v-else-if="!comments.length" class="text-muted-foreground flex flex-col items-center gap-2 py-8 text-center text-sm">
+            <div
+                v-else-if="!comments.length"
+                class="text-muted-foreground flex flex-col items-center gap-2 py-8 text-center text-sm"
+            >
                 <MessageCircle class="size-8 opacity-40" />
-                <p>Todavía no hay comentarios.<br />{{ user ? '¡Sé la primera persona en comentar!' : '' }}</p>
+                <p>
+                    Todavía no hay comentarios.<br />{{
+                        user ? '¡Sé la primera persona en comentar!' : ''
+                    }}
+                </p>
             </div>
 
             <TransitionGroup
@@ -170,7 +222,11 @@ defineExpose({ focus: () => composer.value?.focus() });
                 leave-active-class="transition duration-200 ease-in"
                 leave-to-class="opacity-0"
             >
-                <li v-for="comment in comments" :id="`comment-${comment.id}`" :key="comment.id">
+                <li
+                    v-for="comment in comments"
+                    :id="`comment-${comment.id}`"
+                    :key="comment.id"
+                >
                     <CommentRow
                         :comment="comment"
                         :can-reply="!!user"
@@ -187,7 +243,11 @@ defineExpose({ focus: () => composer.value?.focus() });
                             leave-active-class="transition duration-200 ease-in"
                             leave-to-class="opacity-0"
                         >
-                            <li v-for="reply in comment.replies" :id="`comment-${reply.id}`" :key="reply.id">
+                            <li
+                                v-for="reply in comment.replies"
+                                :id="`comment-${reply.id}`"
+                                :key="reply.id"
+                            >
                                 <CommentRow
                                     :comment="reply"
                                     is-reply
@@ -204,23 +264,47 @@ defineExpose({ focus: () => composer.value?.focus() });
         </div>
 
         <!-- Caja para escribir: pegada abajo -->
-        <div class="bg-background border-border sticky bottom-0 border-t px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))]">
+        <div
+            class="bg-background border-border sticky bottom-0 border-t px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))]"
+        >
             <template v-if="user">
-                <div v-if="replyingTo" class="text-muted-foreground mb-1.5 flex items-center gap-2 px-1 text-xs">
-                    Respondiendo a <strong class="text-foreground">{{ replyingTo.author.name }}</strong>
-                    <button type="button" class="hover:bg-muted ml-auto grid size-6 place-items-center rounded-full" aria-label="Cancelar respuesta" @click="replyingTo = null">
+                <div
+                    v-if="replyingTo"
+                    class="text-muted-foreground mb-1.5 flex items-center gap-2 px-1 text-xs"
+                >
+                    Respondiendo a
+                    <strong class="text-foreground">{{
+                        replyingTo.author.name
+                    }}</strong>
+                    <button
+                        type="button"
+                        class="hover:bg-muted ml-auto grid size-6 place-items-center rounded-full"
+                        aria-label="Cancelar respuesta"
+                        @click="replyingTo = null"
+                    >
                         <X class="size-3.5" />
                     </button>
                 </div>
                 <div class="flex items-end gap-2">
-                    <BusinessAvatar :src="null" :name="shortName" size="sm" class="mb-0.5 hidden sm:inline-grid" />
-                    <div class="bg-muted focus-within:ring-ring/40 flex flex-1 items-end rounded-3xl pr-1 focus-within:ring-2">
+                    <BusinessAvatar
+                        :src="null"
+                        :name="shortName"
+                        size="sm"
+                        class="mb-0.5 hidden sm:inline-grid"
+                    />
+                    <div
+                        class="bg-muted focus-within:ring-ring/40 flex flex-1 items-end rounded-3xl pr-1 focus-within:ring-2"
+                    >
                         <textarea
                             ref="composer"
                             v-model="body"
                             rows="1"
                             :maxlength="MAX"
-                            :placeholder="replyingTo ? 'Escribe tu respuesta…' : 'Escribe un comentario…'"
+                            :placeholder="
+                                replyingTo
+                                    ? 'Escribe tu respuesta…'
+                                    : 'Escribe un comentario…'
+                            "
                             class="max-h-36 min-h-11 flex-1 resize-none bg-transparent px-4 py-3 text-[15px] leading-snug outline-none"
                             aria-label="Escribe un comentario"
                             enterkeyhint="send"
@@ -239,12 +323,18 @@ defineExpose({ focus: () => composer.value?.focus() });
                         </button>
                     </div>
                 </div>
-                <p v-if="body.length > MAX - 100" class="text-muted-foreground mt-1 pr-2 text-right text-xs tabular-nums">
+                <p
+                    v-if="body.length > MAX - 100"
+                    class="text-muted-foreground mt-1 pr-2 text-right text-xs tabular-nums"
+                >
                     {{ body.length }}/{{ MAX }}
                 </p>
             </template>
             <p v-else class="text-muted-foreground py-2 text-center text-sm">
-                <Link :href="login()" class="text-primary font-bold">Inicia sesión</Link> para comentar y reaccionar.
+                <Link :href="login()" class="text-primary font-bold"
+                    >Inicia sesión</Link
+                >
+                para comentar y reaccionar.
             </p>
         </div>
     </div>

@@ -18,7 +18,8 @@ function videoDuration(url: string): Promise<number | null> {
     return new Promise((resolve) => {
         const video = document.createElement('video');
         video.preload = 'metadata';
-        video.onloadedmetadata = () => resolve(Number.isFinite(video.duration) ? video.duration : null);
+        video.onloadedmetadata = () =>
+            resolve(Number.isFinite(video.duration) ? video.duration : null);
         video.onerror = () => resolve(null);
         video.src = url;
     });
@@ -32,15 +33,21 @@ export async function inspect(
     const isVideo = VIDEO_TYPES.includes(file.type);
 
     if (!isImage && !isVideo) {
-        return { error: `«${file.name}» no es una foto ni un video compatible (JPG, PNG, WEBP, MP4, MOV).` };
+        return {
+            error: `«${file.name}» no es una foto ni un video compatible (JPG, PNG, WEBP, MP4, MOV).`,
+        };
     }
 
     const mb = file.size / 1024 / 1024;
     if (isImage && mb > limits.maxImageMb) {
-        return { error: `«${file.name}» pesa ${mb.toFixed(1)} MB. Las fotos pueden pesar hasta ${limits.maxImageMb} MB.` };
+        return {
+            error: `«${file.name}» pesa ${mb.toFixed(1)} MB. Las fotos pueden pesar hasta ${limits.maxImageMb} MB.`,
+        };
     }
     if (isVideo && mb > limits.maxVideoMb) {
-        return { error: `«${file.name}» pesa ${mb.toFixed(0)} MB. Los videos pueden pesar hasta ${limits.maxVideoMb} MB.` };
+        return {
+            error: `«${file.name}» pesa ${mb.toFixed(0)} MB. Los videos pueden pesar hasta ${limits.maxVideoMb} MB.`,
+        };
     }
 
     const url = URL.createObjectURL(file);
@@ -51,7 +58,9 @@ export async function inspect(
         if (seconds !== null && seconds > limits.maxVideoSeconds + 0.5) {
             URL.revokeObjectURL(url);
 
-            return { error: `«${file.name}» dura ${Math.round(seconds)} s. El máximo es ${limits.maxVideoSeconds} s.` };
+            return {
+                error: `«${file.name}» dura ${Math.round(seconds)} s. El máximo es ${limits.maxVideoSeconds} s.`,
+            };
         }
     }
 

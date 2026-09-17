@@ -23,22 +23,40 @@ function like(): void {
 }
 
 function share(): void {
-    void shareLink(postShow({ business: props.post.business.slug, post: props.post.id }).url, props.post.title);
+    void shareLink(
+        postShow({ business: props.post.business.slug, post: props.post.id })
+            .url,
+        props.post.title,
+    );
 }
 </script>
 
 <template>
     <div>
-        <div v-if="state.reactions || state.comments" class="text-muted-foreground flex items-center justify-between px-4 py-2 text-sm">
-            <span v-if="state.reactions" class="inline-flex items-center gap-1.5 tabular-nums">
-                <span class="bg-primary grid size-[18px] place-items-center rounded-full text-white">
+        <div
+            v-if="state.reactions || state.comments"
+            class="text-muted-foreground flex items-center justify-between px-4 py-2 text-sm"
+        >
+            <span
+                v-if="state.reactions"
+                class="inline-flex items-center gap-1.5 tabular-nums"
+            >
+                <span
+                    class="bg-primary grid size-[18px] place-items-center rounded-full text-white"
+                >
                     <Heart class="size-2.5 fill-current" />
                 </span>
                 {{ state.reactions }}
             </span>
             <span v-else />
-            <button v-if="state.comments" type="button" class="hover:underline tabular-nums" @click="emit('comment')">
-                {{ state.comments }} {{ state.comments === 1 ? 'comentario' : 'comentarios' }}
+            <button
+                v-if="state.comments"
+                type="button"
+                class="tabular-nums hover:underline"
+                @click="emit('comment')"
+            >
+                {{ state.comments }}
+                {{ state.comments === 1 ? 'comentario' : 'comentarios' }}
             </button>
         </div>
 
@@ -46,17 +64,33 @@ function share(): void {
             <button
                 type="button"
                 class="hover:bg-muted flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-bold transition-colors"
-                :class="state.reacted ? 'text-primary' : 'text-muted-foreground'"
+                :class="
+                    state.reacted ? 'text-primary' : 'text-muted-foreground'
+                "
                 :aria-pressed="state.reacted"
                 @click="like"
             >
-                <Heart class="size-5 transition-transform" :class="[state.reacted ? 'fill-current' : '', pop ? 'scale-125' : 'scale-100']" />
+                <Heart
+                    class="size-5 transition-transform"
+                    :class="[
+                        state.reacted ? 'fill-current' : '',
+                        pop ? 'scale-125' : 'scale-100',
+                    ]"
+                />
                 Me gusta
             </button>
-            <button type="button" class="text-muted-foreground hover:bg-muted flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-bold" @click="emit('comment')">
+            <button
+                type="button"
+                class="text-muted-foreground hover:bg-muted flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-bold"
+                @click="emit('comment')"
+            >
                 <MessageCircle class="size-5" /> Comentar
             </button>
-            <button type="button" class="text-muted-foreground hover:bg-muted flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-bold" @click="share">
+            <button
+                type="button"
+                class="text-muted-foreground hover:bg-muted flex h-10 items-center justify-center gap-2 rounded-lg text-sm font-bold"
+                @click="share"
+            >
                 <Share2 class="size-5" /> Compartir
             </button>
         </div>

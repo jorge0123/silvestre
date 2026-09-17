@@ -46,7 +46,7 @@ const promises = [
                     class="absolute -right-40 -bottom-48 size-[560px] rounded-full bg-[#c21a52] opacity-[0.22] blur-3xl"
                 />
                 <div
-                    class="absolute inset-0 opacity-[0.22] [background-image:radial-gradient(rgba(255,255,255,.35)_1px,transparent_1.4px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,black,transparent_75%)]"
+                    class="absolute inset-0 [background-image:radial-gradient(rgba(255,255,255,.35)_1px,transparent_1.4px)] [mask-image:linear-gradient(to_bottom,black,transparent_75%)] [background-size:16px_16px] opacity-[0.22]"
                 />
             </div>
 

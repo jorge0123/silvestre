@@ -25,19 +25,29 @@ function isActive(item: (typeof items)[number]): boolean {
 
 <template>
     <div>
-        <p class="text-muted-foreground text-xs font-bold tracking-[0.14em] uppercase">Equipo Silvestre</p>
+        <p
+            class="text-muted-foreground text-xs font-bold tracking-[0.14em] uppercase"
+        >
+            Equipo Silvestre
+        </p>
         <h1 class="font-display mt-1 text-3xl font-extrabold"><slot /></h1>
 
         <!-- En el celular: cuatro botones iguales, ícono arriba y nombre abajo. -->
         <nav class="mt-4" aria-label="Secciones de administración">
-            <div class="bg-muted grid grid-cols-4 gap-1 rounded-2xl p-1 sm:inline-flex">
+            <div
+                class="bg-muted grid grid-cols-4 gap-1 rounded-2xl p-1 sm:inline-flex"
+            >
                 <Link
                     v-for="item in items"
                     :key="item.label"
                     :href="item.href"
                     :aria-current="isActive(item) ? 'page' : undefined"
                     class="flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-xl px-1 py-2 text-xs font-bold transition-all sm:flex-row sm:gap-1.5 sm:px-3.5 sm:text-sm"
-                    :class="isActive(item) ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'"
+                    :class="
+                        isActive(item)
+                            ? 'bg-background text-foreground shadow-sm'
+                            : 'text-muted-foreground hover:text-foreground'
+                    "
                 >
                     <component :is="item.icon" class="size-4" />
                     {{ item.label }}

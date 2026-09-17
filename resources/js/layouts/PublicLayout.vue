@@ -18,11 +18,19 @@ const user = computed(() => page.props.auth?.user);
 
 <template>
     <div class="bg-background min-h-svh">
-        <header class="bg-background/85 border-border sticky top-0 z-40 border-b backdrop-blur">
+        <header
+            class="bg-background/85 border-border sticky top-0 z-40 border-b backdrop-blur"
+        >
             <div class="mx-auto flex h-14 max-w-5xl items-center gap-2 px-4">
-                <Link :href="user ? feed() : home()" class="mr-auto flex items-center gap-2">
+                <Link
+                    :href="user ? feed() : home()"
+                    class="mr-auto flex items-center gap-2"
+                >
                     <AppLogoIcon class="size-8" />
-                    <span class="font-display text-lg font-extrabold tracking-tight">Silvestre</span>
+                    <span
+                        class="font-display text-lg font-extrabold tracking-tight"
+                        >Silvestre</span
+                    >
                 </Link>
                 <ThemeToggle />
                 <Link
@@ -33,8 +41,16 @@ const user = computed(() => page.props.auth?.user);
                     <House class="size-4" /> Inicio
                 </Link>
                 <template v-else>
-                    <Link :href="login()" class="hover:bg-muted hidden h-9 items-center rounded-full px-4 text-sm font-bold sm:inline-flex">Entrar</Link>
-                    <Link :href="register()" class="bg-primary text-primary-foreground inline-flex h-9 items-center rounded-full px-4 text-sm font-bold">Crear cuenta</Link>
+                    <Link
+                        :href="login()"
+                        class="hover:bg-muted hidden h-9 items-center rounded-full px-4 text-sm font-bold sm:inline-flex"
+                        >Entrar</Link
+                    >
+                    <Link
+                        :href="register()"
+                        class="bg-primary text-primary-foreground inline-flex h-9 items-center rounded-full px-4 text-sm font-bold"
+                        >Crear cuenta</Link
+                    >
                 </template>
             </div>
         </header>

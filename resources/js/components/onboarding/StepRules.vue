@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { useForm, usePage } from '@inertiajs/vue3';
-import { Ban, MessageSquareReply, PackageCheck, Sparkles, Star } from '@lucide/vue';
+import {
+    Ban,
+    MessageSquareReply,
+    PackageCheck,
+    Sparkles,
+    Star,
+} from '@lucide/vue';
 import InputError from '@/components/InputError.vue';
 import StepActions from '@/components/onboarding/StepActions.vue';
 import { update } from '@/routes/onboarding';
@@ -38,8 +44,14 @@ function submit(): void {
 <template>
     <form class="grid gap-6" @submit.prevent="submit">
         <ul class="grid gap-3">
-            <li v-for="rule in rules" :key="rule.title" class="bg-card flex gap-3 rounded-xl border p-4">
-                <span class="bg-brand-soft text-brand grid size-9 flex-none place-items-center rounded-lg">
+            <li
+                v-for="rule in rules"
+                :key="rule.title"
+                class="bg-card flex gap-3 rounded-xl border p-4"
+            >
+                <span
+                    class="bg-brand-soft text-brand grid size-9 flex-none place-items-center rounded-lg"
+                >
                     <component :is="rule.icon" class="size-[18px]" />
                 </span>
                 <div>
@@ -49,7 +61,9 @@ function submit(): void {
             </li>
         </ul>
 
-        <div class="border-destructive/25 bg-destructive/[0.05] rounded-xl border p-4">
+        <div
+            class="border-destructive/25 bg-destructive/[0.05] rounded-xl border p-4"
+        >
             <p class="text-destructive flex items-center gap-2 font-bold">
                 <Ban class="size-4" /> No se puede vender en Silvestre
             </p>
@@ -72,13 +86,19 @@ function submit(): void {
             <p>
                 <strong>Todas las funciones son gratis, para siempre.</strong>
                 Cuando tu perfil esté completo al 100 %, te regalamos
-                {{ options.trialDays }} días de Pro, que te promociona en el Inicio
-                de más personas. Después es opcional: {{ pricing }}.
+                {{ options.trialDays }} días de Pro, que te promociona en el
+                Inicio de más personas. Después es opcional: {{ pricing }}.
             </p>
         </div>
 
-        <label class="bg-card flex cursor-pointer items-start gap-3 rounded-xl border p-4">
-            <input v-model="form.accept_policy" type="checkbox" class="accent-primary mt-0.5 size-5 flex-none" />
+        <label
+            class="bg-card flex cursor-pointer items-start gap-3 rounded-xl border p-4"
+        >
+            <input
+                v-model="form.accept_policy"
+                type="checkbox"
+                class="accent-primary mt-0.5 size-5 flex-none"
+            />
             <span class="text-[15px]">
                 Acepto las reglas de Silvestre y confirmo que lo que voy a
                 vender está permitido.

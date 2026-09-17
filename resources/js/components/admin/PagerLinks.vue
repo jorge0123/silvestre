@@ -7,7 +7,11 @@ defineProps<{ page: Paginated<unknown> }>();
 </script>
 
 <template>
-    <nav v-if="page.last_page > 1" class="flex items-center justify-between gap-3 text-sm" aria-label="Páginas">
+    <nav
+        v-if="page.last_page > 1"
+        class="flex items-center justify-between gap-3 text-sm"
+        aria-label="Páginas"
+    >
         <Link
             v-if="page.prev_page_url"
             :href="page.prev_page_url"
@@ -17,7 +21,9 @@ defineProps<{ page: Paginated<unknown> }>();
             <ChevronLeft class="size-4" /> Anterior
         </Link>
         <span v-else />
-        <span class="text-muted-foreground tabular-nums">Página {{ page.current_page }} de {{ page.last_page }}</span>
+        <span class="text-muted-foreground tabular-nums"
+            >Página {{ page.current_page }} de {{ page.last_page }}</span
+        >
         <Link
             v-if="page.next_page_url"
             :href="page.next_page_url"

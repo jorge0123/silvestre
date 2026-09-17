@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
-import { Banknote, CreditCard, Landmark, Link2, ShieldCheck, Smartphone, Store } from '@lucide/vue';
+import {
+    Banknote,
+    CreditCard,
+    Landmark,
+    Link2,
+    ShieldCheck,
+    Smartphone,
+    Store,
+} from '@lucide/vue';
 import InputError from '@/components/InputError.vue';
 import ChoiceCard from '@/components/onboarding/ChoiceCard.vue';
 import StepActions from '@/components/onboarding/StepActions.vue';
@@ -45,7 +53,9 @@ function toggle(method: string): void {
 function error(method: string, field: string): string | undefined {
     const i = form.payment_methods.findIndex((r) => r.method === method);
 
-    return (form.errors as Record<string, string>)[`payment_methods.${i}.details.${field}`];
+    return (form.errors as Record<string, string>)[
+        `payment_methods.${i}.details.${field}`
+    ];
 }
 
 function submit(): void {
@@ -67,10 +77,16 @@ function submit(): void {
         <fieldset class="grid gap-3">
             <legend class="mb-1 text-sm font-medium">
                 ¿Cómo te pueden pagar?
-                <span class="text-muted-foreground font-normal">Elige todas las que aceptes.</span>
+                <span class="text-muted-foreground font-normal"
+                    >Elige todas las que aceptes.</span
+                >
             </legend>
 
-            <div v-for="option in options.paymentMethods" :key="option.value" class="grid gap-2">
+            <div
+                v-for="option in options.paymentMethods"
+                :key="option.value"
+                class="grid gap-2"
+            >
                 <ChoiceCard
                     multiple
                     :selected="Boolean(rowFor(option.value))"
@@ -80,65 +96,171 @@ function submit(): void {
                     @select="toggle(option.value)"
                 />
 
-                <Transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1">
+                <Transition
+                    enter-active-class="transition duration-200 ease-out"
+                    enter-from-class="opacity-0 -translate-y-1"
+                >
                     <div
                         v-if="rowFor(option.value) && option.details.length"
                         class="bg-muted/60 ml-4 grid gap-4 rounded-xl p-4 sm:grid-cols-2"
                     >
                         <template v-if="option.value === 'bank_transfer'">
                             <div class="grid gap-1.5">
-                                <Label :for="`bank-${option.value}`">Banco</Label>
-                                <select :id="`bank-${option.value}`" v-model="rowFor(option.value)!.details.bank" :class="selectClass">
-                                    <option :value="undefined" disabled>Elige tu banco</option>
-                                    <option v-for="bank in options.banks" :key="bank" :value="bank">{{ bank }}</option>
+                                <Label :for="`bank-${option.value}`"
+                                    >Banco</Label
+                                >
+                                <select
+                                    :id="`bank-${option.value}`"
+                                    v-model="rowFor(option.value)!.details.bank"
+                                    :class="selectClass"
+                                >
+                                    <option :value="undefined" disabled>
+                                        Elige tu banco
+                                    </option>
+                                    <option
+                                        v-for="bank in options.banks"
+                                        :key="bank"
+                                        :value="bank"
+                                    >
+                                        {{ bank }}
+                                    </option>
                                 </select>
-                                <InputError :message="error(option.value, 'bank')" />
+                                <InputError
+                                    :message="error(option.value, 'bank')"
+                                />
                             </div>
                             <div class="grid gap-1.5">
-                                <Label :for="`type-${option.value}`">Tipo de cuenta</Label>
-                                <select :id="`type-${option.value}`" v-model="rowFor(option.value)!.details.account_type" :class="selectClass">
-                                    <option :value="undefined" disabled>Elige</option>
-                                    <option v-for="type in options.accountTypes" :key="type" :value="type">{{ type }}</option>
+                                <Label :for="`type-${option.value}`"
+                                    >Tipo de cuenta</Label
+                                >
+                                <select
+                                    :id="`type-${option.value}`"
+                                    v-model="
+                                        rowFor(option.value)!.details
+                                            .account_type
+                                    "
+                                    :class="selectClass"
+                                >
+                                    <option :value="undefined" disabled>
+                                        Elige
+                                    </option>
+                                    <option
+                                        v-for="type in options.accountTypes"
+                                        :key="type"
+                                        :value="type"
+                                    >
+                                        {{ type }}
+                                    </option>
                                 </select>
-                                <InputError :message="error(option.value, 'account_type')" />
+                                <InputError
+                                    :message="
+                                        error(option.value, 'account_type')
+                                    "
+                                />
                             </div>
                             <div class="grid gap-1.5">
-                                <Label :for="`acct-${option.value}`">Número de cuenta</Label>
-                                <Input :id="`acct-${option.value}`" v-model="rowFor(option.value)!.details.account_number" class="h-11" inputmode="numeric" />
-                                <InputError :message="error(option.value, 'account_number')" />
+                                <Label :for="`acct-${option.value}`"
+                                    >Número de cuenta</Label
+                                >
+                                <Input
+                                    :id="`acct-${option.value}`"
+                                    v-model="
+                                        rowFor(option.value)!.details
+                                            .account_number
+                                    "
+                                    class="h-11"
+                                    inputmode="numeric"
+                                />
+                                <InputError
+                                    :message="
+                                        error(option.value, 'account_number')
+                                    "
+                                />
                             </div>
                             <div class="grid gap-1.5">
-                                <Label :for="`holder-${option.value}`">A nombre de</Label>
-                                <Input :id="`holder-${option.value}`" v-model="rowFor(option.value)!.details.holder" class="h-11" />
-                                <InputError :message="error(option.value, 'holder')" />
+                                <Label :for="`holder-${option.value}`"
+                                    >A nombre de</Label
+                                >
+                                <Input
+                                    :id="`holder-${option.value}`"
+                                    v-model="
+                                        rowFor(option.value)!.details.holder
+                                    "
+                                    class="h-11"
+                                />
+                                <InputError
+                                    :message="error(option.value, 'holder')"
+                                />
                             </div>
                         </template>
 
                         <template v-else-if="option.value === 'mobile_wallet'">
                             <div class="grid gap-1.5">
-                                <Label :for="`wallet-${option.value}`">Billetera</Label>
-                                <select :id="`wallet-${option.value}`" v-model="rowFor(option.value)!.details.provider" :class="selectClass">
-                                    <option :value="undefined" disabled>Elige</option>
-                                    <option v-for="wallet in options.wallets" :key="wallet" :value="wallet">{{ wallet }}</option>
+                                <Label :for="`wallet-${option.value}`"
+                                    >Billetera</Label
+                                >
+                                <select
+                                    :id="`wallet-${option.value}`"
+                                    v-model="
+                                        rowFor(option.value)!.details.provider
+                                    "
+                                    :class="selectClass"
+                                >
+                                    <option :value="undefined" disabled>
+                                        Elige
+                                    </option>
+                                    <option
+                                        v-for="wallet in options.wallets"
+                                        :key="wallet"
+                                        :value="wallet"
+                                    >
+                                        {{ wallet }}
+                                    </option>
                                 </select>
-                                <InputError :message="error(option.value, 'provider')" />
+                                <InputError
+                                    :message="error(option.value, 'provider')"
+                                />
                             </div>
                             <div class="grid gap-1.5">
-                                <Label :for="`wnum-${option.value}`">Número</Label>
-                                <Input :id="`wnum-${option.value}`" v-model="rowFor(option.value)!.details.number" class="h-11" inputmode="numeric" />
-                                <InputError :message="error(option.value, 'number')" />
+                                <Label :for="`wnum-${option.value}`"
+                                    >Número</Label
+                                >
+                                <Input
+                                    :id="`wnum-${option.value}`"
+                                    v-model="
+                                        rowFor(option.value)!.details.number
+                                    "
+                                    class="h-11"
+                                    inputmode="numeric"
+                                />
+                                <InputError
+                                    :message="error(option.value, 'number')"
+                                />
                             </div>
                         </template>
 
                         <template v-else-if="option.value === 'payment_link'">
                             <div class="grid gap-1.5 sm:col-span-2">
-                                <Label :for="`url-${option.value}`">Tu link de pago</Label>
-                                <Input :id="`url-${option.value}`" v-model="rowFor(option.value)!.details.url" type="url" class="h-11" placeholder="https://" />
-                                <InputError :message="error(option.value, 'url')" />
+                                <Label :for="`url-${option.value}`"
+                                    >Tu link de pago</Label
+                                >
+                                <Input
+                                    :id="`url-${option.value}`"
+                                    v-model="rowFor(option.value)!.details.url"
+                                    type="url"
+                                    class="h-11"
+                                    placeholder="https://"
+                                />
+                                <InputError
+                                    :message="error(option.value, 'url')"
+                                />
                             </div>
                         </template>
 
-                        <p v-if="option.requiresProof" class="text-muted-foreground text-xs sm:col-span-2">
+                        <p
+                            v-if="option.requiresProof"
+                            class="text-muted-foreground text-xs sm:col-span-2"
+                        >
                             El cliente verá estos datos al pedir, subirá su
                             comprobante y tú confirmarás que el dinero llegó.
                         </p>

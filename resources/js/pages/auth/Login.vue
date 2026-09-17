@@ -16,7 +16,8 @@ import { request } from '@/routes/password';
 defineOptions({
     layout: {
         title: 'Entra a Silvestre',
-        description: 'Tus pedidos, tus negocios favoritos y, si vendes, tu panel.',
+        description:
+            'Tus pedidos, tus negocios favoritos y, si vendes, tu panel.',
     },
 });
 

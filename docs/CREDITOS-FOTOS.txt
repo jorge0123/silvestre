@@ -1,0 +1,633 @@
+Fotos de prueba de Wikimedia Commons, SOLO para desarrollo local.
+Video del vivero: flower.mp4, CC0, MDN Web Docs.
+Los demás videos se generaron con ffmpeg a partir de estas fotos.
+
+demo/galletasdechela/avatar.jpg
+  Foto: File:6cookies.JPG
+  Autor: Jonathunder
+  Licencia: GFDL 1.2
+  Fuente: https://commons.wikimedia.org/wiki/File:6cookies.JPG
+
+demo/galletasdechela/cover.jpg
+  Foto: File:Illuminated wooden shelf with many glass jars containing cookies for sale in Tokyo.jpg
+  Autor: Basile Morin
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Illuminated_wooden_shelf_with_many_glass_jars_containing_cookies_for_sale_in_Tokyo.jpg
+
+demo/galletasdechela/item-1.jpg
+  Foto: File:Choc-Chip-Cookie.jpg
+  Autor: Evan-Amos
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:Choc-Chip-Cookie.jpg
+
+demo/galletasdechela/item-2.jpg
+  Foto: File:ChocolateChipSmile.jpg
+  Autor: Jonathunder
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:ChocolateChipSmile.jpg
+
+demo/galletasdechela/item-3.jpg
+  Foto: File:Chocolate chip cookies on cutting board.jpg
+  Autor: Mshuang2
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Chocolate_chip_cookies_on_cutting_board.jpg
+
+demo/galletasdechela/item-4.jpg
+  Foto: File:Chocolate chip cookies fresh from the oven, July 2024.jpg
+  Autor: Infrogmation
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Chocolate_chip_cookies_fresh_from_the_oven,_July_2024.jpg
+
+demo/galletasdechela/gallery-1.jpg
+  Foto: File:Chocolate Chip Cookies, Subway Northbridge, 2026 (01).jpg
+  Autor: Bahnfrend
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Chocolate_Chip_Cookies,_Subway_Northbridge,_2026_(01).jpg
+
+demo/galletasdechela/gallery-2.jpg
+  Foto: File:Plates of chocolate chip cookies with walnuts.jpg
+  Autor: Ashley Bilodeau
+  Licencia: CC BY-SA 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Plates_of_chocolate_chip_cookies_with_walnuts.jpg
+
+demo/galletasdechela/gallery-3.jpg
+  Foto: File:Chocolate chip cookie - Pelicano coffee co. 2025-07-20.jpg
+  Autor: Andy Li
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Chocolate_chip_cookie_-_Pelicano_coffee_co._2025-07-20.jpg
+
+demo/galletasdechela/gallery-4.jpg
+  Foto: File:Cherry chocolate chip cookies on a baking sheet.jpg
+  Autor: Infrogmation of New Orleans
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Cherry_chocolate_chip_cookies_on_a_baking_sheet.jpg
+
+demo/galletasdechela/gallery-5.jpg
+  Foto: File:Plate of chocolate chip cookies, ready to munch.jpg
+  Autor: The-Wuje
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Plate_of_chocolate_chip_cookies,_ready_to_munch.jpg
+
+demo/galletasdechela/gallery-6.jpg
+  Foto: File:Walnut chocolate chip cookies textures.jpg
+  Autor: CNEcija12345
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Walnut_chocolate_chip_cookies_textures.jpg
+
+demo/galletasdechela/gallery-7.jpg
+  Foto: File:Yummmmm...chocolate chip cookies with walnuts.jpg
+  Autor: Ashley Bilodeau
+  Licencia: CC BY-SA 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Yummmmm...chocolate_chip_cookies_with_walnuts.jpg
+
+demo/galletasdechela/gallery-8.jpg
+  Foto: File:Chocolate Chip Cookies 11.jpg
+  Autor: Urvi Yagnik
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Chocolate_Chip_Cookies_11.jpg
+
+demo/cafelacumbre/avatar.jpg
+  Foto: File:Roasted coffee beans.jpg
+  Autor: MarkSweep
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans.jpg
+
+demo/cafelacumbre/cover.jpg
+  Foto: File:Four scenes of work on a coffee plantation in Guatemala. Woo Wellcome V0019187.jpg
+  Autor: C. E. Andrews (engraver)
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:Four_scenes_of_work_on_a_coffee_plantation_in_Guatemala._Woo_Wellcome_V0019187.jpg
+
+demo/cafelacumbre/item-1.jpg
+  Foto: File:Roasted coffee beans in white bowl.png
+  Autor: Alorin
+  Licencia: CC BY 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_in_white_bowl.png
+
+demo/cafelacumbre/item-2.jpg
+  Foto: File:Coarsely grounded coffee beans in white bowl with intact roasted bean.png
+  Autor: Alorin
+  Licencia: CC BY 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Coarsely_grounded_coffee_beans_in_white_bowl_with_intact_roasted_bean.png
+
+demo/cafelacumbre/item-3.jpg
+  Foto: File:Less coarsely grounded coffee beans in white bowl with intact roasted bean.png
+  Autor: Alorin
+  Licencia: CC BY 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Less_coarsely_grounded_coffee_beans_in_white_bowl_with_intact_roasted_bean.png
+
+demo/cafelacumbre/gallery-1.jpg
+  Foto: File:Roasted coffee beans on the surface. 01.jpg
+  Autor: A S M Jobaer
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_on_the_surface._01.jpg
+
+demo/cafelacumbre/gallery-2.jpg
+  Foto: File:Roasted coffee beans on the surface. 02.jpg
+  Autor: A S M Jobaer
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_on_the_surface._02.jpg
+
+demo/cafelacumbre/gallery-3.jpg
+  Foto: File:Coffee beans roasted.jpg
+  Autor: Sridhar Rao
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Coffee_beans_roasted.jpg
+
+demo/cafelacumbre/gallery-4.jpg
+  Foto: File:Roasted coffee beans (Unsplash).jpg
+  Autor: Daniel Ruswick danielruswick
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_(Unsplash).jpg
+
+demo/cafelacumbre/gallery-5.jpg
+  Foto: File:Roasted Coffee Beans Texture.jpg
+  Autor: freestock.ca
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_Coffee_Beans_Texture.jpg
+
+demo/cafelacumbre/gallery-6.jpg
+  Foto: File:Roasted coffee beans (14562943389).jpg
+  Autor: Andreas Poike
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_(14562943389).jpg
+
+demo/cafelacumbre/gallery-7.jpg
+  Foto: File:Pre-roasted Coffee Beans (11516809276).jpg
+  Autor: Paul Galow from Berlin, Germany
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Pre-roasted_Coffee_Beans_(11516809276).jpg
+
+demo/cafelacumbre/gallery-8.jpg
+  Foto: File:Roasted Coffee Beans in Hermetic Jar.jpg
+  Autor: Pierre Camateros
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Roasted_Coffee_Beans_in_Hermetic_Jar.jpg
+
+demo/viverolasorquideas/avatar.jpg
+  Foto: File:Phalaenopsis cultivar (Moth orchid).jpg
+  Autor: Serigalakampus
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_cultivar_(Moth_orchid).jpg
+
+demo/viverolasorquideas/cover.jpg
+  Foto: File:Greenhouse orchid nursery shed, Sitakunda Eco Park⁠.jpg
+  Autor: Sultan Sunnny
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Greenhouse_orchid_nursery_shed,_Sitakunda_Eco_Park%E2%81%A0.jpg
+
+demo/viverolasorquideas/item-1.jpg
+  Foto: File:Phalaenopsis July 2020-2.jpg
+  Autor: Alvesgaspar
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_July_2020-2.jpg
+
+demo/viverolasorquideas/item-2.jpg
+  Foto: File:Phalaenopsis white cultivar 2.jpg
+  Autor: Ianaré Sévi
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_white_cultivar_2.jpg
+
+demo/viverolasorquideas/item-3.jpg
+  Foto: File:Phalaenopsis Orchid Photographed by Heather Brosche.jpg
+  Autor: Hbrosche
+  Licencia: CC BY 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_Orchid_Photographed_by_Heather_Brosche.jpg
+
+demo/viverolasorquideas/gallery-1.jpg
+  Foto: File:Orchid 2021 001 Phalaenopsis amabilis Blume.jpg
+  Autor: Adam S. Keck
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Orchid_2021_001_Phalaenopsis_amabilis_Blume.jpg
+
+demo/viverolasorquideas/gallery-2.jpg
+  Foto: File:Phalaenopsis bellina edit.jpg
+  Autor: Jan Witowski
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_bellina_edit.jpg
+
+demo/viverolasorquideas/gallery-3.jpg
+  Foto: File:Phalaenopsis philippinensis NationalOrchidGarden-Singapore.jpg
+  Autor: Desconocido
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_philippinensis_NationalOrchidGarden-Singapore.jpg
+
+demo/viverolasorquideas/gallery-4.jpg
+  Foto: File:Phalaenopsis orchid, Kaziranga Orchid Park, Assam.jpg
+  Autor: JyotiPN
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_orchid,_Kaziranga_Orchid_Park,_Assam.jpg
+
+demo/viverolasorquideas/gallery-5.jpg
+  Foto: File:Phalaenopsis at 17th NYBG orchid show.jpg
+  Autor: Antigng
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_at_17th_NYBG_orchid_show.jpg
+
+demo/viverolasorquideas/gallery-6.jpg
+  Foto: File:Phalaenopsis Orchid (133629063).jpeg
+  Autor: Demi Lucas
+  Licencia: CC BY 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_Orchid_(133629063).jpeg
+
+demo/viverolasorquideas/gallery-7.jpg
+  Foto: File:Phalaenopsis orchid, Kaziranga National Orchid Park.jpg
+  Autor: JyotiPN
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_orchid,_Kaziranga_National_Orchid_Park.jpg
+
+demo/viverolasorquideas/gallery-8.jpg
+  Foto: File:Phalaenopsis at the Pacific Orchid Exposition 2010.jpg
+  Autor: Guillaume Paumier
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Phalaenopsis_at_the_Pacific_Orchid_Exposition_2010.jpg
+
+demo/barberiaelpatron/avatar.jpg
+  Foto: File:George Washington's barbershop gives a haircut to the Commanding Officer (8214274).jpg
+  Autor: U.S. Navy photo by Seaman Wadelon Presley
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:George_Washington%27s_barbershop_gives_a_haircut_to_the_Commanding_Officer_(8214274).jpg
+
+demo/barberiaelpatron/cover.jpg
+  Foto: File:Barber shop interior, New Orleans, 1935.jpg
+  Autor: Ben Shahn
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:Barber_shop_interior,_New_Orleans,_1935.jpg
+
+demo/barberiaelpatron/item-1.jpg
+  Foto: File:Barbershop haircutting session (51209426512).jpg
+  Autor: Hair Spies from US
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Barbershop_haircutting_session_(51209426512).jpg
+
+demo/barberiaelpatron/item-2.jpg
+  Foto: File:George Washington's barbershop gives a haircut to the Commanding Officer (8214275).jpg
+  Autor: U.S. Navy photo by Seaman Wadelon Presley
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:George_Washington%27s_barbershop_gives_a_haircut_to_the_Commanding_Officer_(8214275).jpg
+
+demo/barberiaelpatron/item-3.jpg
+  Foto: File:US Navy 040324-N-6433N-013 Ship's Serviceman Seaman Michael McNabb, of Lady Lake, Fla., gives Aviation Boatswain's Mate Airman Jorge Font, of Puerto Rico, a haircut in the barbershop aboard USS George Washington.jpg
+  Autor: U.S. Navy photo by Photographer’s Mate Airman Rex Nelson.
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:US_Navy_040324-N-6433N-013_Ship%27s_Serviceman_Seaman_Michael_McNabb,_of_Lady_Lake,_Fla.,_gives_Aviation_Boatswain%27s_Mate_Airman_Jorge_Font,_of_Puerto_Rico,_a_haircut_in_the_barbershop_aboard_USS_George_Washington.jpg
+
+demo/barberiaelpatron/gallery-1.jpg
+  Foto: File:US Navy 041031-N-8158F-113 Ship's Serviceman 3rd Class Ben Quail, of Phoenix, Ariz., gives Storekeeper 3rd Class Jonathan Towsley, of South Hills, Mich., a haircut in the barbershop aboard the aircraft carrier USS Nimitz.jpg
+  Autor: U.S. Navy photo by Photographer’s Mate Airman Roland Franklin
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:US_Navy_041031-N-8158F-113_Ship%27s_Serviceman_3rd_Class_Ben_Quail,_of_Phoenix,_Ariz.,_gives_Storekeeper_3rd_Class_Jonathan_Towsley,_of_South_Hills,_Mich.,_a_haircut_in_the_barbershop_aboard_the_aircraft_carrier_USS_Nimitz.jpg
+
+demo/barberiaelpatron/gallery-2.jpg
+  Foto: File:US Navy 040731-N-1485H-041 Ship's Serviceman Seaman Antonio Elley of Brooklyn, N.Y., receives a haircut from Ship's Serviceman Seaman Louis Redmon of Olmstead, Fla., in the barbershop aboard the aircraft carrier USS Kitty Hawk.jpg
+  Autor: U.S. Navy photo by Photographer's Mate 3rd Class Lamel J. Hinton
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:US_Navy_040731-N-1485H-041_Ship%27s_Serviceman_Seaman_Antonio_Elley_of_Brooklyn,_N.Y.,_receives_a_haircut_from_Ship%27s_Serviceman_Seaman_Louis_Redmon_of_Olmstead,_Fla.,_in_the_barbershop_aboard_the_aircraft_carrier_USS_Kitty_Hawk.jpg
+
+demo/barberiaelpatron/gallery-3.jpg
+  Foto: File:Barbershop Ritual 05 Barbershop Conversation.jpg
+  Autor: Alvinategyeka
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Barbershop_Ritual_05_Barbershop_Conversation.jpg
+
+demo/barberiaelpatron/gallery-4.jpg
+  Foto: File:ROCKPORT'S BARBERSHOP - NARA - 548244.jpg
+  Autor: Deborah Amel Parks
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:ROCKPORT%27S_BARBERSHOP_-_NARA_-_548244.jpg
+
+demo/barberiaelpatron/gallery-5.jpg
+  Foto: File:Barbershop haircutting session (51210140096).jpg
+  Autor: Hair Spies from US
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Barbershop_haircutting_session_(51210140096).jpg
+
+demo/barberiaelpatron/gallery-6.jpg
+  Foto: File:Barbershop haircutting session (51209426382).jpg
+  Autor: Hair Spies from US
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Barbershop_haircutting_session_(51209426382).jpg
+
+demo/barberiaelpatron/gallery-7.jpg
+  Foto: File:Barbershop haircutting session (51210342498).jpg
+  Autor: Hair Spies from US
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Barbershop_haircutting_session_(51210342498).jpg
+
+demo/barberiaelpatron/gallery-8.jpg
+  Foto: File:Barbershop in Pasig.jpg
+  Autor: Elmer B. Domingo
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Barbershop_in_Pasig.jpg
+
+demo/tamalesdonarosa/avatar.jpg
+  Foto: File:Tamales Mexicanos sweet corn tamales 01.jpg
+  Autor: Usernet123u
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_Mexicanos_sweet_corn_tamales_01.jpg
+
+demo/tamalesdonarosa/cover.jpg
+  Foto: File:Typical Guatemalan breakfast - San Juan la Laguna, Guatemala.jpg
+  Autor: young shanahan
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Typical_Guatemalan_breakfast_-_San_Juan_la_Laguna,_Guatemala.jpg
+
+demo/tamalesdonarosa/item-1.jpg
+  Foto: File:Tamales Mexicanos sweet corn tamales 03.jpg
+  Autor: Usernet123u
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_Mexicanos_sweet_corn_tamales_03.jpg
+
+demo/tamalesdonarosa/item-2.jpg
+  Foto: File:Tamales Mexicanos sweet corn tamales 05.jpg
+  Autor: Usernet123u
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_Mexicanos_sweet_corn_tamales_05.jpg
+
+demo/tamalesdonarosa/item-3.jpg
+  Foto: File:Tamales Mexicanos sweet corn tamales 02.jpg
+  Autor: Usernet123u
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_Mexicanos_sweet_corn_tamales_02.jpg
+
+demo/tamalesdonarosa/gallery-1.jpg
+  Foto: File:Tamales Mexicanos sweet corn tamales 06.jpg
+  Autor: Usernet123u
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_Mexicanos_sweet_corn_tamales_06.jpg
+
+demo/tamalesdonarosa/gallery-2.jpg
+  Foto: File:Tamales Mexicanos sweet corn tamales 04.jpg
+  Autor: Usernet123u
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_Mexicanos_sweet_corn_tamales_04.jpg
+
+demo/tamalesdonarosa/gallery-3.jpg
+  Foto: File:Tamales norteños.jpg
+  Autor: NachtBel
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_norte%C3%B1os.jpg
+
+demo/tamalesdonarosa/gallery-4.jpg
+  Foto: File:Tamales norteños con salsa.jpg
+  Autor: Alejandra Mendoza Santillan
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_norte%C3%B1os_con_salsa.jpg
+
+demo/tamalesdonarosa/gallery-5.jpg
+  Foto: File:Tamales in Clarksdale, MS.jpg
+  Autor: Southern Foodways Alliance
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_in_Clarksdale,_MS.jpg
+
+demo/tamalesdonarosa/gallery-6.jpg
+  Foto: File:Tamales oaxaqueños, Mazatlán, 27 de marzo de 2023 06.jpg
+  Autor: El Nuevo Doge
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_oaxaque%C3%B1os,_Mazatl%C3%A1n,_27_de_marzo_de_2023_06.jpg
+
+demo/tamalesdonarosa/gallery-7.jpg
+  Foto: File:Tamales oaxaqueños, Mazatlán, 27 de marzo de 2023 08.jpg
+  Autor: El Nuevo Doge
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Tamales_oaxaque%C3%B1os,_Mazatl%C3%A1n,_27_de_marzo_de_2023_08.jpg
+
+demo/tamalesdonarosa/gallery-8.jpg
+  Foto: File:Chicken Tamales from Delta Fast Food.jpg
+  Autor: LRD615
+  Licencia: CC BY-SA 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Chicken_Tamales_from_Delta_Fast_Food.jpg
+
+demo/unasporkari/avatar.jpg
+  Foto: File:French Manicure with Glitter nail art on ring finger.jpg
+  Autor: Theknowhau
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:French_Manicure_with_Glitter_nail_art_on_ring_finger.jpg
+
+demo/unasporkari/cover.jpg
+  Foto: File:Ireland Kilkenny Nail Salon BW 2025-09-15 11-20-16.jpg
+  Autor: Berthold Werner
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Ireland_Kilkenny_Nail_Salon_BW_2025-09-15_11-20-16.jpg
+
+demo/unasporkari/item-1.jpg
+  Foto: File:Queer manicure example.jpg
+  Autor: Tails Wx
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Queer_manicure_example.jpg
+
+demo/unasporkari/item-2.jpg
+  Foto: File:French manicure with silver nail polish.jpg
+  Autor: Lelê Breveglieri
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:French_manicure_with_silver_nail_polish.jpg
+
+demo/unasporkari/item-3.jpg
+  Foto: File:Manicure implements (AM 4645-16).jpg
+  Autor: Desconocido
+  Licencia: CC BY 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Manicure_implements_(AM_4645-16).jpg
+
+demo/unasporkari/gallery-1.jpg
+  Foto: File:Swirly purple konad nail art.jpg
+  Autor: Courtney  Rhodes
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Swirly_purple_konad_nail_art.jpg
+
+demo/unasporkari/gallery-2.jpg
+  Foto: File:Manicure in Simplicity.jpg
+  Autor: Jephath
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Manicure_in_Simplicity.jpg
+
+demo/unasporkari/gallery-3.jpg
+  Foto: File:Acrylic nail art with crystal.jpg
+  Autor: Ajls1111
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Acrylic_nail_art_with_crystal.jpg
+
+demo/unasporkari/gallery-4.jpg
+  Foto: File:Nail art - Glitter Diamond.jpg
+  Autor: lisa bentley
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Nail_art_-_Glitter_Diamond.jpg
+
+demo/unasporkari/gallery-5.jpg
+  Foto: File:Homa Manicure (7884456250).jpg
+  Autor: Lelê Breveglieri from Suzano
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Homa_Manicure_(7884456250).jpg
+
+demo/unasporkari/gallery-6.jpg
+  Foto: File:UV manicure lamps (15157277325).jpg
+  Autor: Becky Stern from Brooklyn, USA
+  Licencia: CC BY-SA 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:UV_manicure_lamps_(15157277325).jpg
+
+demo/unasporkari/gallery-7.jpg
+  Foto: File:DZ6 0587 A nail technician carefully files a customers nails at a salon surrounded by color samples and manicure tools.jpg
+  Autor: PattayaPatrol
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:DZ6_0587_A_nail_technician_carefully_files_a_customers_nails_at_a_salon_surrounded_by_color_samples_and_manicure_tools.jpg
+
+demo/unasporkari/gallery-8.jpg
+  Foto: File:Red nail polish (4149676692).jpg
+  Autor: Kate Brady from McMurdo, Antarctica, United States
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Red_nail_polish_(4149676692).jpg
+
+demo/tejidosixchel/avatar.jpg
+  Foto: File:Huipil with brown cotton.jpg
+  Autor: Chiome-gold
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_with_brown_cotton.jpg
+
+demo/tejidosixchel/cover.jpg
+  Foto: File:GuatemalaWeavings79.jpg
+  Autor: Infrogmation
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:GuatemalaWeavings79.jpg
+
+demo/tejidosixchel/item-1.jpg
+  Foto: File:Huipils Guatemala DMA.jpg
+  Autor: Photo: User:FA2010
+  Licencia: Public domain
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipils_Guatemala_DMA.jpg
+
+demo/tejidosixchel/item-2.jpg
+  Foto: File:Huipil uit Guatemala, asset r1TFYieq8HskgcKCWKs0h9sy.jpg
+  Autor: onbekend
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_r1TFYieq8HskgcKCWKs0h9sy.jpg
+
+demo/tejidosixchel/item-3.jpg
+  Foto: File:Huipil uit Guatemala, asset AbAaRLXKH9KCV9XRZVjemBuA.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_AbAaRLXKH9KCV9XRZVjemBuA.jpg
+
+demo/tejidosixchel/gallery-1.jpg
+  Foto: File:Huipil uit Guatemala, asset q1klaaaarZTWBgSTarrC0dWt.jpg
+  Autor: onbekend
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_q1klaaaarZTWBgSTarrC0dWt.jpg
+
+demo/tejidosixchel/gallery-2.jpg
+  Foto: File:Huipil uit Guatemala, asset Y19OJrVFKUMgHABQ4qfEevJT.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_Y19OJrVFKUMgHABQ4qfEevJT.jpg
+
+demo/tejidosixchel/gallery-3.jpg
+  Foto: File:Huipil uit Guatemala, asset KofZSdxrfVJbGeVUhecpszns.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_KofZSdxrfVJbGeVUhecpszns.jpg
+
+demo/tejidosixchel/gallery-4.jpg
+  Foto: File:Huipil uit Guatemala, asset V2Sob3udjEVhSjZCRTtOBdlQ.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_V2Sob3udjEVhSjZCRTtOBdlQ.jpg
+
+demo/tejidosixchel/gallery-5.jpg
+  Foto: File:Huipil uit Guatemala, asset e1eP8d76MqNbJ8ARQg6hZxia.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_e1eP8d76MqNbJ8ARQg6hZxia.jpg
+
+demo/tejidosixchel/gallery-6.jpg
+  Foto: File:Huipil uit Guatemala, asset LXMCSibdRglIcRVhFruw6MY7.jpg
+  Autor: onbekend
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_LXMCSibdRglIcRVhFruw6MY7.jpg
+
+demo/tejidosixchel/gallery-7.jpg
+  Foto: File:Huipil uit Guatemala, asset R2ZERgObBhfLPPBgjMdZC0GT.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_R2ZERgObBhfLPPBgjMdZC0GT.jpg
+
+demo/tejidosixchel/gallery-8.jpg
+  Foto: File:Huipil uit Guatemala, asset y1pfSbMMJ6kTYjbOLQJmhZtR.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Huipil_uit_Guatemala,_asset_y1pfSbMMJ6kTYjbOLQJmhZtR.jpg
+
+demo/plomeriaramirez/avatar.jpg
+  Foto: File:Plumber at work (retouched).jpg
+  Autor: photo taken by flickr user rick
+  Licencia: CC BY 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Plumber_at_work_(retouched).jpg
+
+demo/plomeriaramirez/cover.jpg
+  Foto: File:Plumbing work - temporary closure of water pipes - on Pinsker Street in Jerusalem - B.jpg
+  Autor: Korenn
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Plumbing_work_-_temporary_closure_of_water_pipes_-_on_Pinsker_Street_in_Jerusalem_-_B.jpg
+
+demo/plomeriaramirez/item-1.jpg
+  Foto: File:Matchfit Plumbing Competition.jpg
+  Autor: matchfitskills from Provista Plumbing &amp; Gas in Perth, WA.
+  Licencia: CC BY-SA 2.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Matchfit_Plumbing_Competition.jpg
+
+demo/plomeriaramirez/item-2.jpg
+  Foto: File:Plumbers-e14.jpg
+  Autor: Plumbers E14
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Plumbers-e14.jpg
+
+demo/plomeriaramirez/item-3.jpg
+  Foto: File:-Three Plumbers with Pipes and Tools- MET DP700384.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:-Three_Plumbers_with_Pipes_and_Tools-_MET_DP700384.jpg
+
+demo/plomeriaramirez/gallery-1.jpg
+  Foto: File:-Two Plumbers in Overalls- MET DP700388.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:-Two_Plumbers_in_Overalls-_MET_DP700388.jpg
+
+demo/plomeriaramirez/gallery-2.jpg
+  Foto: File:-Two Plumbers with a Pipe, Pipe Cutter, and Toolbox- MET DP700374.jpg
+  Autor: Unknown authorUnknown author
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:-Two_Plumbers_with_a_Pipe,_Pipe_Cutter,_and_Toolbox-_MET_DP700374.jpg
+
+demo/plomeriaramirez/gallery-3.jpg
+  Foto: File:Goulburn Licenced Sanitary Plumber 001.JPG
+  Autor: Mattinbgn (talk · contribs)
+  Licencia: CC BY 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Goulburn_Licenced_Sanitary_Plumber_001.JPG
+
+demo/plomeriaramirez/gallery-4.jpg
+  Foto: File:Cameroon male plumbier at work 05.jpg
+  Autor: Gatien TITCHO SEUMO
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:Cameroon_male_plumbier_at_work_05.jpg
+
+demo/plomeriaramirez/gallery-5.jpg
+  Foto: File:Plumber in Alberton(GN10871).jpg
+  Autor: State Government Photographer
+  Licencia: CC0
+  Fuente: https://commons.wikimedia.org/wiki/File:Plumber_in_Alberton(GN10871).jpg
+
+demo/plomeriaramirez/gallery-6.jpg
+  Foto: File:A plumber and water tank.jpg
+  Autor: Cbliu
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:A_plumber_and_water_tank.jpg
+
+demo/plomeriaramirez/gallery-7.jpg
+  Foto: File:The Plumber King, hand-scrawled advertisement (Hong Kong).jpg
+  Autor: Mk2010
+  Licencia: CC BY-SA 3.0
+  Fuente: https://commons.wikimedia.org/wiki/File:The_Plumber_King,_hand-scrawled_advertisement_(Hong_Kong).jpg
+
+demo/plomeriaramirez/gallery-8.jpg
+  Foto: File:"Сантехнік" Харків.jpg
+  Autor: Map hobby
+  Licencia: CC BY-SA 4.0
+  Fuente: https://commons.wikimedia.org/wiki/File:%22%D0%A1%D0%B0%D0%BD%D1%82%D0%B5%D1%85%D0%BD%D1%96%D0%BA%22_%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2.jpg

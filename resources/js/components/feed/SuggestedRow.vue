@@ -24,22 +24,44 @@ function scrollBy(direction: number): void {
 </script>
 
 <template>
-    <section class="bg-card border-y py-4 sm:rounded-2xl sm:border" :aria-label="title">
+    <section
+        class="bg-card border-y py-4 sm:rounded-2xl sm:border"
+        :aria-label="title"
+    >
         <div class="mb-3 flex items-center gap-2 px-4">
-            <h2 class="font-display flex-1 text-[17px] font-bold">{{ title }}</h2>
-            <button type="button" class="hover:bg-muted hidden size-8 place-items-center rounded-full disabled:opacity-30 sm:grid" :disabled="atStart" aria-label="Ver anteriores" @click="scrollBy(-1)">
+            <h2 class="font-display flex-1 text-[17px] font-bold">
+                {{ title }}
+            </h2>
+            <button
+                type="button"
+                class="hover:bg-muted hidden size-8 place-items-center rounded-full disabled:opacity-30 sm:grid"
+                :disabled="atStart"
+                aria-label="Ver anteriores"
+                @click="scrollBy(-1)"
+            >
                 <ChevronLeft class="size-4" />
             </button>
-            <button type="button" class="hover:bg-muted hidden size-8 place-items-center rounded-full disabled:opacity-30 sm:grid" :disabled="atEnd" aria-label="Ver más" @click="scrollBy(1)">
+            <button
+                type="button"
+                class="hover:bg-muted hidden size-8 place-items-center rounded-full disabled:opacity-30 sm:grid"
+                :disabled="atEnd"
+                aria-label="Ver más"
+                @click="scrollBy(1)"
+            >
                 <ChevronRight class="size-4" />
             </button>
         </div>
         <div
             ref="track"
-            class="flex snap-x gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            class="flex snap-x scroll-px-4 [scrollbar-width:none] gap-3 overflow-x-auto px-4 pb-1 [&::-webkit-scrollbar]:hidden"
             @scroll.passive="onScroll"
         >
-            <BusinessSuggestCard v-for="b in businesses" :key="b.id" :business="b" class="snap-start" />
+            <BusinessSuggestCard
+                v-for="b in businesses"
+                :key="b.id"
+                :business="b"
+                class="snap-start"
+            />
         </div>
     </section>
 </template>

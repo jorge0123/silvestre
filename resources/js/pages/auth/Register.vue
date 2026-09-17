@@ -85,8 +85,12 @@ const choices = [
                     >
                         <component :is="choice.icon" class="size-[18px]" />
                     </span>
-                    <span class="text-sm leading-tight font-bold">{{ choice.title }}</span>
-                    <span class="text-muted-foreground text-xs leading-snug">{{ choice.text }}</span>
+                    <span class="text-sm leading-tight font-bold">{{
+                        choice.title
+                    }}</span>
+                    <span class="text-muted-foreground text-xs leading-snug">{{
+                        choice.text
+                    }}</span>
                 </button>
             </div>
             <input type="hidden" name="account_type" :value="accountType" />
@@ -145,7 +149,9 @@ const choices = [
             </div>
 
             <div class="grid gap-2">
-                <Label for="password_confirmation">Confirma tu contraseña</Label>
+                <Label for="password_confirmation"
+                    >Confirma tu contraseña</Label
+                >
                 <PasswordInput
                     id="password_confirmation"
                     required
@@ -167,13 +173,20 @@ const choices = [
                 data-test="register-user-button"
             >
                 <Spinner v-if="processing" />
-                {{ accountType === 'business' ? 'Crear cuenta y abrir mi negocio' : 'Crear cuenta' }}
+                {{
+                    accountType === 'business'
+                        ? 'Crear cuenta y abrir mi negocio'
+                        : 'Crear cuenta'
+                }}
             </Button>
         </div>
 
         <p class="text-muted-foreground text-center text-sm">
             ¿Ya tienes cuenta?
-            <TextLink :href="login()" :tabindex="6" class="text-primary font-bold"
+            <TextLink
+                :href="login()"
+                :tabindex="6"
+                class="text-primary font-bold"
                 >Entra aquí</TextLink
             >
         </p>

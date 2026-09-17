@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BadgeCheck, EllipsisVertical, Flag, Pencil, Trash2 } from '@lucide/vue';
+import {
+    BadgeCheck,
+    EllipsisVertical,
+    Flag,
+    Pencil,
+    Trash2,
+} from '@lucide/vue';
 import { nextTick, ref, useTemplateRef } from 'vue';
 import { toast } from 'vue-sonner';
 import BusinessAvatar from '@/components/feed/BusinessAvatar.vue';
@@ -18,7 +24,11 @@ import { show as businessShow } from '@/routes/business';
 import { destroy, report, update } from '@/routes/comments';
 import type { CommentItem } from '@/types/feed';
 
-const props = defineProps<{ comment: CommentItem; isReply?: boolean; canReply: boolean }>();
+const props = defineProps<{
+    comment: CommentItem;
+    isReply?: boolean;
+    canReply: boolean;
+}>();
 
 const emit = defineEmits<{
     reply: [comment: CommentItem];
@@ -60,11 +70,19 @@ async function saveEdit(): Promise<void> {
 
     saving.value = true;
     try {
-        const res = await api<{ comment: CommentItem }>('PATCH', update(props.comment.id).url, { body });
+        const res = await api<{ comment: CommentItem }>(
+            'PATCH',
+            update(props.comment.id).url,
+            { body },
+        );
         emit('updated', { ...res.comment, replies: props.comment.replies });
         editing.value = false;
     } catch (error) {
-        toast.error(error instanceof ApiError ? error.firstError() : 'No se pudo guardar.');
+        toast.error(
+            error instanceof ApiError
+                ? error.firstError()
+                : 'No se pudo guardar.',
+        );
     } finally {
         saving.value = false;
     }
@@ -73,11 +91,16 @@ async function saveEdit(): Promise<void> {
 async function confirmDelete(): Promise<void> {
     deleting.value = true;
     try {
-        const res = await api<{ count: number }>('DELETE', destroy(props.comment.id).url);
+        const res = await api<{ count: number }>(
+            'DELETE',
+            destroy(props.comment.id).url,
+        );
         emit('deleted', { id: props.comment.id, count: res.count });
         toast.success('Comentario eliminado.');
     } catch (error) {
-        toast.error(error instanceof ApiError ? error.message : 'No se pudo eliminar.');
+        toast.error(
+            error instanceof ApiError ? error.message : 'No se pudo eliminar.',
+        );
         deleting.value = false;
         confirmingDelete.value = false;
     }
@@ -85,10 +108,18 @@ async function confirmDelete(): Promise<void> {
 
 async function sendReport(reason: string): Promise<void> {
     try {
-        const res = await api<{ message: string }>('POST', report(props.comment.id).url, { reason });
+        const res = await api<{ message: string }>(
+            'POST',
+            report(props.comment.id).url,
+            { reason },
+        );
         toast.success(res.message);
     } catch (error) {
-        toast.error(error instanceof ApiError ? error.message : 'No se pudo enviar el reporte.');
+        toast.error(
+            error instanceof ApiError
+                ? error.message
+                : 'No se pudo enviar el reporte.',
+        );
     }
 }
 
@@ -102,33 +133,72 @@ function onEditKey(event: KeyboardEvent): void {
 </script>
 
 <template>
-    <div class="group/comment flex gap-2.5" :class="{ 'opacity-50 transition-opacity': deleting }">
+    <div
+        class="group/comment flex gap-2.5"
+        :class="{ 'opacity-50 transition-opacity': deleting }"
+    >
         <component
             :is="comment.author.slug ? Link : 'span'"
-            :href="comment.author.slug ? businessShow(comment.author.slug).url : undefined"
+            :href="
+                comment.author.slug
+                    ? businessShow(comment.author.slug).url
+                    : undefined
+            "
             class="flex-none"
         >
-            <BusinessAvatar :src="comment.author.avatar" :name="comment.author.name" :size="isReply ? 'sm' : 'sm'" />
+            <BusinessAvatar
+                :src="comment.author.avatar"
+                :name="comment.author.name"
+                :size="isReply ? 'sm' : 'sm'"
+            />
         </component>
 
         <div class="min-w-0 flex-1">
             <div v-if="!editing" class="flex items-start gap-1">
-                <div class="bg-muted inline-block max-w-full rounded-2xl px-3.5 py-2">
-                    <p class="flex flex-wrap items-center gap-x-1.5 text-[13px] font-bold">
+                <div
+                    class="bg-muted inline-block max-w-full rounded-2xl px-3.5 py-2"
+                >
+                    <p
+                        class="flex flex-wrap items-center gap-x-1.5 text-[13px] font-bold"
+                    >
                         <component
                             :is="comment.author.slug ? Link : 'span'"
-                            :href="comment.author.slug ? businessShow(comment.author.slug).url : undefined"
-                            :class="comment.author.slug ? 'hover:underline' : ''"
+                            :href="
+                                comment.author.slug
+                                    ? businessShow(comment.author.slug).url
+                                    : undefined
+                            "
+                            :class="
+                                comment.author.slug ? 'hover:underline' : ''
+                            "
                         >
                             {{ comment.author.name }}
                         </component>
-                        <BadgeCheck v-if="comment.author.isBusiness" class="text-brand size-3.5" aria-hidden="true" />
-                        <span v-if="comment.author.isPostOwner" class="bg-brand-soft text-brand rounded-full px-1.5 text-[10px]">Autor</span>
+                        <BadgeCheck
+                            v-if="comment.author.isBusiness"
+                            class="text-brand size-3.5"
+                            aria-hidden="true"
+                        />
+                        <span
+                            v-if="comment.author.isPostOwner"
+                            class="bg-brand-soft text-brand rounded-full px-1.5 text-[10px]"
+                            >Autor</span
+                        >
                     </p>
-                    <p class="text-[15px] leading-snug break-words whitespace-pre-line">{{ comment.body }}</p>
+                    <p
+                        class="text-[15px] leading-snug break-words whitespace-pre-line"
+                    >
+                        {{ comment.body }}
+                    </p>
                 </div>
 
-                <DropdownMenu v-if="comment.can.edit || comment.can.delete || comment.can.report">
+                <DropdownMenu
+                    v-if="
+                        comment.can.edit ||
+                        comment.can.delete ||
+                        comment.can.report
+                    "
+                >
                     <DropdownMenuTrigger as-child>
                         <button
                             type="button"
@@ -138,19 +208,39 @@ function onEditKey(event: KeyboardEvent): void {
                             <EllipsisVertical class="size-4" />
                         </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" class="min-w-44 rounded-xl">
-                        <DropdownMenuItem v-if="comment.can.edit" class="cursor-pointer gap-2" @select="startEdit">
+                    <DropdownMenuContent
+                        align="end"
+                        class="min-w-44 rounded-xl"
+                    >
+                        <DropdownMenuItem
+                            v-if="comment.can.edit"
+                            class="cursor-pointer gap-2"
+                            @select="startEdit"
+                        >
                             <Pencil class="size-4" /> Editar
                         </DropdownMenuItem>
-                        <DropdownMenuItem v-if="comment.can.delete" class="text-destructive cursor-pointer gap-2" @select="confirmingDelete = true">
+                        <DropdownMenuItem
+                            v-if="comment.can.delete"
+                            class="text-destructive cursor-pointer gap-2"
+                            @select="confirmingDelete = true"
+                        >
                             <Trash2 class="size-4" /> Eliminar
                         </DropdownMenuItem>
                         <template v-if="comment.can.report">
-                            <DropdownMenuSeparator v-if="comment.can.edit || comment.can.delete" />
-                            <DropdownMenuLabel class="text-muted-foreground flex items-center gap-2 text-xs font-normal">
+                            <DropdownMenuSeparator
+                                v-if="comment.can.edit || comment.can.delete"
+                            />
+                            <DropdownMenuLabel
+                                class="text-muted-foreground flex items-center gap-2 text-xs font-normal"
+                            >
                                 <Flag class="size-3.5" /> Reportar por…
                             </DropdownMenuLabel>
-                            <DropdownMenuItem v-for="r in reasons" :key="r.value" class="cursor-pointer pl-8" @select="sendReport(r.value)">
+                            <DropdownMenuItem
+                                v-for="r in reasons"
+                                :key="r.value"
+                                class="cursor-pointer pl-8"
+                                @select="sendReport(r.value)"
+                            >
                                 {{ r.label }}
                             </DropdownMenuItem>
                         </template>
@@ -170,8 +260,16 @@ function onEditKey(event: KeyboardEvent): void {
                     @keydown="onEditKey"
                 />
                 <div class="mt-1.5 flex items-center justify-end gap-2 text-xs">
-                    <span class="text-muted-foreground mr-auto pl-1">Esc para cancelar</span>
-                    <button type="button" class="hover:bg-background rounded-full px-3 py-1.5 font-bold" @click="editing = false">Cancelar</button>
+                    <span class="text-muted-foreground mr-auto pl-1"
+                        >Esc para cancelar</span
+                    >
+                    <button
+                        type="button"
+                        class="hover:bg-background rounded-full px-3 py-1.5 font-bold"
+                        @click="editing = false"
+                    >
+                        Cancelar
+                    </button>
                     <button
                         type="button"
                         class="bg-primary text-primary-foreground inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 font-bold disabled:opacity-50"
@@ -184,19 +282,48 @@ function onEditKey(event: KeyboardEvent): void {
             </div>
 
             <!-- Confirmación de borrado, en línea -->
-            <div v-if="confirmingDelete" class="border-destructive/30 bg-destructive/[0.06] mt-1.5 flex flex-wrap items-center gap-2 rounded-xl border px-3 py-2 text-sm">
+            <div
+                v-if="confirmingDelete"
+                class="border-destructive/30 bg-destructive/[0.06] mt-1.5 flex flex-wrap items-center gap-2 rounded-xl border px-3 py-2 text-sm"
+            >
                 <span class="mr-auto">
-                    ¿Eliminar este comentario<template v-if="comment.replies.length"> y sus {{ comment.replies.length }} respuestas</template>?
+                    ¿Eliminar este comentario<template
+                        v-if="comment.replies.length"
+                    >
+                        y sus {{ comment.replies.length }} respuestas</template
+                    >?
                 </span>
-                <button type="button" class="hover:bg-background rounded-full px-3 py-1 font-bold" :disabled="deleting" @click="confirmingDelete = false">No</button>
-                <button type="button" class="bg-destructive inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-bold text-white" :disabled="deleting" @click="confirmDelete">
+                <button
+                    type="button"
+                    class="hover:bg-background rounded-full px-3 py-1 font-bold"
+                    :disabled="deleting"
+                    @click="confirmingDelete = false"
+                >
+                    No
+                </button>
+                <button
+                    type="button"
+                    class="bg-destructive inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-bold text-white"
+                    :disabled="deleting"
+                    @click="confirmDelete"
+                >
                     <Spinner v-if="deleting" class="size-3" /> Sí, eliminar
                 </button>
             </div>
 
-            <p v-if="!editing" class="text-muted-foreground mt-1 flex items-center gap-3 pl-3 text-xs">
+            <p
+                v-if="!editing"
+                class="text-muted-foreground mt-1 flex items-center gap-3 pl-3 text-xs"
+            >
                 <span>{{ comment.ago }}</span>
-                <button v-if="canReply" type="button" class="hover:text-foreground font-bold" @click="emit('reply', comment)">Responder</button>
+                <button
+                    v-if="canReply"
+                    type="button"
+                    class="hover:text-foreground font-bold"
+                    @click="emit('reply', comment)"
+                >
+                    Responder
+                </button>
                 <span v-if="comment.edited">Editado</span>
             </p>
 
