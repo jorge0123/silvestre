@@ -17,7 +17,17 @@ class Media
             return $path;
         }
 
-        return Storage::disk('public')->url($path);
+        $url = Storage::disk('public')->url($path);
+
+        // Si el disco apunta a este mismo servidor, se devuelve la ruta sin
+        // dominio: así la foto se ve igual desde localhost, desde un enlace
+        // temporal para demostrar o desde el dominio de producción. Un disco
+        // externo (S3, CDN) sí conserva su URL completa.
+        $host = parse_url($url, PHP_URL_HOST);
+
+        return $host === null || $host === parse_url((string) config('app.url'), PHP_URL_HOST)
+            ? (string) parse_url($url, PHP_URL_PATH)
+            : $url;
     }
 
     public static function isVideo(?string $path): bool
