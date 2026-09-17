@@ -51,9 +51,19 @@ negocios que sigue, negocios sugeridos y publicidad de quienes pagan plan.
 
 ## Pruébalo
 
-Todavía no hay una versión en línea. Se levanta en tu computadora en unos
-minutos y trae **datos de prueba**: 9 negocios con fotos, videos, historias,
-reseñas y comentarios de verdad.
+### Sin instalar nada, desde el navegador
+
+[![Abrir en GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/jorge0123/silvestre?quickstart=1)
+
+Ese botón levanta Silvestre en una máquina de GitHub con todos los datos de
+prueba. Tarda unos minutos la primera vez; cuando termine, GitHub abre el
+puerto **8000** y ya puedes entrar con las cuentas de más abajo. Necesitas una
+cuenta de GitHub (el plan gratuito incluye horas de sobra para verlo).
+
+### En tu computadora
+
+Se levanta en unos minutos y trae **datos de prueba**: 9 negocios con fotos,
+videos, historias, reseñas y comentarios de verdad.
 
 **Necesitas:** PHP 8.3 o más, [Composer](https://getcomposer.org) y
 [Node.js 22](https://nodejs.org) o más.

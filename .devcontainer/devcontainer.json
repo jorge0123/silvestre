@@ -1,0 +1,24 @@
+{
+    "name": "Silvestre",
+    "image": "mcr.microsoft.com/devcontainers/php:1-8.3-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": { "version": "22" }
+    },
+    "postCreateCommand": "bash .devcontainer/arranque.sh",
+    "postAttachCommand": {
+        "servidor": "php artisan serve --host=0.0.0.0 --port=8000"
+    },
+    "forwardPorts": [8000],
+    "portsAttributes": {
+        "8000": { "label": "Silvestre", "onAutoForward": "openPreview" }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "laravel.vscode-laravel",
+                "Vue.volar",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    }
+}
